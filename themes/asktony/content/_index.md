@@ -1,6 +1,1 @@
----
-title: "AAA"
-layout: home
----
-
 

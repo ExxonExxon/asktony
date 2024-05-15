@@ -1,78 +1,82 @@
 <!DOCTYPE html>
-<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
+      dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
     {{ partial "head.html" . }}
 </head>
 <body>
-  <main>
+<main>
     {{ block "main" . }}{{ end }}
-  </main>
-    {{ partial "header.html" . }}
-    <!-- Responsive  Navbar Starting  from Here -->
-    <nav class="nav flex flex-wrap items-center text-center justify-between px-4">
-        <!--*-*-*-*- WEBSITE LOGO *-*-*-*--->
-        <div class="flex flex-no-shrink items-center  py-2 text-grey-darkest">
-          <img src="images/logo.png" width="120px" class="logo-img" alt="">
-        </div>
-      <!--*-*-*-*-*- RESPONSIVE BUTTON WILL SHOW ON MOBILE AND TABLET VIEW *-*-*-*-*-->
-        <input class="menu-btn hidden" type="checkbox" id="menu-btn">
-        <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
-          <span class="navicon bg-grey-darkest flex items-center relative"></span>
-        </label>
-      <!--*-*-*-*- NAVBAR ITEM UL *-*-*-*-*--->
-        <ul class="menu border-b md:border-none flex justify-end list-reset mr-4 mt-10 w-full md:w-auto">
-          <!--*-*-*-*- NAVBAR ITEMS UL ITEMS  *-*-*-*-* -->
-            <li class="border-t md:border-none">
-            <a href="#" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker border-b-4">Home</a>
-          </li>
-          
-          <li class="border-t md:border-none">
-            <a href="#" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">How it works</a>
-          </li>
-          
-          <li class="border-t md:border-none">
-            <a href="#" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Services</a>
-          </li>
+</main>
+{{ partial "header.html" . }}
+<!-- Responsive  Navbar Starting  from Here -->
+<nav class="nav flex flex-wrap items-center text-center justify-between px-4">
+    <!--*-*-*-*- WEBSITE LOGO *-*-*-*--->
+    <div class="flex flex-no-shrink items-center  py-2 text-grey-darkest">
+        <img src="images/logo.png" width="120px" class="logo-img" alt="">
+    </div>
+    <!--*-*-*-*-*- RESPONSIVE BUTTON WILL SHOW ON MOBILE AND TABLET VIEW *-*-*-*-*-->
+    <input class="menu-btn hidden" type="checkbox" id="menu-btn">
+    <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+        <span class="navicon bg-grey-darkest flex items-center relative"></span>
+    </label>
+    <!--*-*-*-*- NAVBAR ITEM UL *-*-*-*-*--->
+    <ul class="menu border-b md:border-none flex justify-end list-reset mr-4 mt-10 w-full md:w-auto">
+        <!--*-*-*-*- NAVBAR ITEMS UL ITEMS  *-*-*-*-* -->
+        <li class="border-t md:border-none">
+            <a href="#"
+               class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker border-b-4">Home</a>
+        </li>
 
-          <li class="border-t md:border-none">
+        <li class="border-t md:border-none">
+            <a href="#" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">How
+                it works</a>
+        </li>
+
+        <li class="border-t md:border-none">
+            <a href="#" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Services</a>
+        </li>
+
+        <li class="border-t md:border-none">
             <a href="#" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Contact</a>
-          </li>
-          
-        </ul>
-      </nav>
+        </li>
+
+    </ul>
+</nav>
 
 <!--*-*-*-*-* Responsive Navbar Ending Here *-*-*-*-*--->
 
 <!--*-*-*-*- TOP HEADER BANNER START *-*-*-*-*-*--->
 <div class="w-full max-h-screen relative">
- <img src="images/header.jpg"  class="object-cover object-center w-full" alt="">
-        <div class="text-center header-banner-heading flex items-center justify h-full  w-28 max-w-md-20 absolute bottom-0 lg:left-20 md:left-10 sm:left-2">
-            <h1 class="text-white">Specialised in domestic & commercial <span class="header-banner-heading-border"> maintenance </span></h1>
-            
-        </div>
+    <img src="images/header.jpg" class="object-cover object-center w-full" alt="">
+    <div class="text-center header-banner-heading flex items-center justify h-full  w-28 max-w-md-20 absolute bottom-0 lg:left-20 md:left-10 sm:left-2">
+        <h1 class="text-white">Specialised in domestic & commercial <span class="header-banner-heading-border"> maintenance </span>
+        </h1>
+
     </div>
+</div>
 </div>
 <!-- *-*-*-*-*-*-*-TOP HEADER BANNER ENDS HERE*-*-*-*-*-*-*- -->
 
 <div class="lg:w-4/5 md:w-11/12 m-auto lg:px-1 px-4 py-12 m-auto">
 
-<h1 class="text-6xl ml-2 comon-heading pt-10 my-6 font-black lg:text-justify md:text-justify">Just Ask Tony!</h1>
+    <h1 class="text-6xl ml-2 comon-heading pt-10 my-6 font-black lg:text-justify md:text-justify">Just Ask Tony!</h1>
 
-<div class="text-xl text-justify leading-8">
-<p class="mt-3">
-    Whether you are owning or renting a home, office or even a store it
-     always going to be a wild and exciting adventure. However, it can also
-      be a lot of work. Problems arise, things need to be replaced, or you
-       have a remodeling vision that you want to bring to life. Stop getting
-        all worked up and look no further, Tony and his team are here to help you.
-</p>
-<p class="mt-3">Since 2015, hundreds of people have counted on our team for all their repair,
-     installation, and maintenance services. You’ve got enough going on in your
-      life without having to worry about hiring a painter, finding a plumber,
-      and seeking someone to help you with your bathroom remodel. Get in touch
-       with us and we will take care of it!
-</p>
-</div>
+    <div class="text-xl text-justify leading-8">
+        <p class="mt-3">
+            Whether you are owning or renting a home, office or even a store it
+            always going to be a wild and exciting adventure. However, it can also
+            be a lot of work. Problems arise, things need to be replaced, or you
+            have a remodeling vision that you want to bring to life. Stop getting
+            all worked up and look no further, Tony and his team are here to help you.
+        </p>
+        <p class="mt-3">Since 2015, hundreds of people have counted on our team for all their repair,
+            installation, and maintenance services. You’ve got enough going on in your
+            life without having to worry about hiring a painter, finding a plumber,
+            and seeking someone to help you with your bathroom remodel. Get in touch
+            with us and we will take care of it!
+        </p>
+    </div>
 </div>
 <!---*-**-*-*-*-* How it work starts herer*-*-*-*-*-*-*-*- -->
 
@@ -80,306 +84,309 @@
 <section class="bg-gray-100">
     <div class="lg:w-4/5 md:w-full m-auto lg:px-1 sm:px-5 px-4 mt-10 mb-10 py-5">
 
-            <h1 class="text-6xl ml-2 comon-heading pt-10 my-6 font-black lg:text-justify md:text-justify">How it works</h1>
+        <h1 class="text-6xl ml-2 comon-heading pt-10 my-6 font-black lg:text-justify md:text-justify">How it works</h1>
 
-      <div class="flex flex-wrap -m-4">
-        <div class="p-5 md:w-1/3 lg:w-4/12">
-          <div class="h-full overflow-hidden">
-            <img class=" w-full object-cover object-center" src="images/Artboard1100.png" alt="">
-            <div class="flex">
-                  <img src="images/1.png" class="-mt-3 max-h-28 max-w-3xl">
-              <p class="text-3xl ml-1 -mt-0 comon-heading  my-6 font-black">Show us your problem</p><br>
+        <div class="flex flex-wrap -m-4">
+            <div class="p-5 md:w-1/3 lg:w-4/12">
+                <div class="h-full overflow-hidden">
+                    <img class=" w-full object-cover object-center" src="images/Artboard1100.png" alt="">
+                    <div class="flex">
+                        <img src="images/1.png" class="-mt-3 max-h-28 max-w-3xl">
+                        <p class="text-3xl ml-1 -mt-0 comon-heading  my-6 font-black">Show us your problem</p><br>
+                    </div>
+                    <p class="text-xl mt-5 lg:px-3 ml-12">
+                        Request a repair sending us a video
+                    </p>
+                </div>
             </div>
-            <p class="text-xl mt-5 lg:px-3 ml-12">
-                Request a repair sending us a video
-            </p>
-          </div>
-        </div>
-        <div class="p-5 md:w-1/2 lg:w-4/12">
-          <div class="h-full   overflow-hidden">
-            <img class=" w-full object-cover object-center" src="images/Artboard2100.png" alt="blog">
-            <div class=" flex">
-                    <img src="images/2.png" class="-mt-3 max-h-28 max-w-3xl" >
-                <p class="text-3xl ml-1 -mt-0 comon-heading  my-6 font-black">We send you a quote</p>
+            <div class="p-5 md:w-1/2 lg:w-4/12">
+                <div class="h-full   overflow-hidden">
+                    <img class=" w-full object-cover object-center" src="images/Artboard2100.png" alt="blog">
+                    <div class=" flex">
+                        <img src="images/2.png" class="-mt-3 max-h-28 max-w-3xl">
+                        <p class="text-3xl ml-1 -mt-0 comon-heading  my-6 font-black">We send you a quote</p>
+                    </div>
+                    <p class="text-xl mt-5 lg:px-3 ml-12">
+                        Once the video is received we will send you a quote
+                    </p>
+                </div>
             </div>
-            <p class="text-xl mt-5 lg:px-3 ml-12">
-                Once the video is received we will send you a quote
-            </p>
-          </div>
-        </div>
-        <div class="p-5 md:w-1/2 lg:w-4/12 ">
-          <div class="h-full overflow-hidden">
-            <img class="w-full object-cover object-center" src="images/Artboard3100.png" alt="blog">
-            <div class=" flex">  
-                    <img src="images/3.png" alt="" class="-mt-3 max-h-28 max-w-3xl">
-                <p class="text-3xl ml-1 -mt-0 comon-heading my-6 font-black">We will contact you</p>
+            <div class="p-5 md:w-1/2 lg:w-4/12 ">
+                <div class="h-full overflow-hidden">
+                    <img class="w-full object-cover object-center" src="images/Artboard3100.png" alt="blog">
+                    <div class=" flex">
+                        <img src="images/3.png" alt="" class="-mt-3 max-h-28 max-w-3xl">
+                        <p class="text-3xl ml-1 -mt-0 comon-heading my-6 font-black">We will contact you</p>
+                    </div>
+                    <p class="text-xl mt-5 lg:px-3 ml-12">
+                        We call you back to organize the repair
+                    </p>
+                </div>
             </div>
-            <p class="text-xl mt-5 lg:px-3 ml-12">
-                We call you back to organize the repair
-            </p>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-
+</section>
 
 
 <!--*-*-*- How it works ends here *-*-*-*-*- -->
-    <div class="flex items-center justify-center h-max">
-        <div class="sm:w-3/5 md:w-3/5 lg:w-2/5 xl:1/6 h-max m-6 p-6">
-            <a href="https://app.feex.com.au/code/E4XDVJ9T3R">
+<div class="flex items-center justify-center h-max">
+    <div class="sm:w-3/5 md:w-3/5 lg:w-2/5 xl:1/6 h-max m-6 p-6">
+        <a href="https://app.feex.com.au/code/E4XDVJ9T3R">
             <button
                     class="bg-tony-green shadow-2xl hover:shadow-md text-black font-bold py-6 px-12 rounded-lg">
                 <div class="flex flex-row items-start justify-start">
-                    <img class="w-20 py-2" src="images/moviephone.png" alt="" >
+                    <img class="w-20 py-2" src="images/moviephone.png" alt="">
                     <div class="flex flex-col px-4 xl:px-8">
                         <div class="text-gray-700 text-2xl 2xl:text-3xl">Let's start!</div>
                         <div class="text-gray-600 md:text-lg pt-2 lg:text-lg 2xl:text-2xl">
-                            It takes less than one minute <br class="hidden xl:inline">to send the video!</div>
+                            It takes less than one minute <br class="hidden xl:inline">to send the video!
+                        </div>
                     </div>
                 </div>
             </button>
-            </a>
-        </div>
+        </a>
     </div>
+</div>
 
 <!---*-*-**-*-*-*-*-  SERVICES SECTION *-*-*-*--*--*- -->
 
 
 <section class="body-font">
     <div class="lg:w-10/12 md:w-auto m-auto sm:px-5 px-4 py-5 mx-auto">
-       
-            <h1 class="text-6xl ml-2 comon-heading py-10 my-6 font-black lg:text-justify md:text-justify mb-15">Services</h1>
-       
-      <div class="flex flex-wrap m-auto  -mb-10  text-center">
-        <div class="md:w-1/2  mb-10 md:pl-5 shadow-xl tablet-display ">
-          <div class=" h-64 overflow-hidden">
-            <img alt="" class="object-cover object-center h-full w-full" src="images/flooring.jpg">
-          </div>
-          <button class="services-button">Flooring</button>
-          <p class="leading-relaxed text-lg font-medium  mx-10 my-10 text-justify">
-            Is it time to lay new floor tile in your bathroom? Want to
-             renovate your house with new flooring? Whatever your vision, 
-              is here to do the heavy lifting for you.
- Our professionals can remove, install, and repair all types of tile flooring.
-  If your current tile floors need some touch-ups or repairs, you can turn to
-   our handymen for experienced and reliable services. Likewise, we have the tools
-  and training needed to upgrade your home with brand new tiles.
-        </p>
-        </div>
 
-<!--FOR MOBILE VIEW for flooring starts form here -->
+        <h1 class="text-6xl ml-2 comon-heading py-10 my-6 font-black lg:text-justify md:text-justify mb-15">
+            Services</h1>
 
-<div class=" w-full mb-10 shadow-xl mobile-display">
-  <div class=" h-64 overflow-hidden">
-    <img alt="" class="object-cover object-center h-full w-full" src="images/flooring.jpg">
-  </div>
-  <button class="services-button-for-mobile accordion">Flooring <i class="fas fa-chevron-down"></i></button>
-  <p class="panel text-lg font-medium  mx-2 my-5 text-justify">
-    Is it time to lay new floor tile in your bathroom? Want to
-     renovate your house with new flooring? Whatever your vision, 
-      is here to do the heavy lifting for you.
-Our professionals can remove, install, and repair all types of tile flooring.
-If your current tile floors need some touch-ups or repairs, you can turn to
-our handymen for experienced and reliable services. Likewise, we have the tools
-and training needed to upgrade your home with brand new tiles.
-</p>
-</div>
-
-<!-- FOR MOBILE VIEW ENDS HERE for flooring -->
-
-        <div class="md:w-1/2 shadow-xl md:pl-5 mb-10 tablet-display ">
-            <div class=" h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="images/repairs.jpg">
-              </div>
-        <button class="services-button">Repairs</button>
-          <p class="leading-relaxed text-lg font-medium  mx-10 my-10 text-justify">
-            Do you have holes in your drywall? Your office desk 
-            started to get shaky? If so, it is time for you to get in touch with
-             the professional repairers at Tony. We can save you time 
-             and money by coming to you and performing all of the fixes 
-             that have been accumulating on your to-do list. We are your
-              one-call solution for all of the projects you need done
-             around your property and we provide workmanship you can trust.
-        </p>
-        </div>
-
-        <!-- Mobile view for Repair start form here -->
-
-        <div class=" w-full mb-10 shadow-xl mobile-display">
-          <div class=" h-64 overflow-hidden">
-              <img alt="content" class="object-cover object-center h-full w-full" src="images/repairs.jpg">
+        <div class="flex flex-wrap m-auto  -mb-10  text-center">
+            <div class="md:w-1/2  mb-10 md:pl-5 shadow-xl tablet-display ">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="" class="object-cover object-center h-full w-full" src="images/flooring.jpg">
+                </div>
+                <button class="services-button">Flooring</button>
+                <p class="leading-relaxed text-lg font-medium  mx-10 my-10 text-justify">
+                    Is it time to lay new floor tile in your bathroom? Want to
+                    renovate your house with new flooring? Whatever your vision,
+                    is here to do the heavy lifting for you.
+                    Our professionals can remove, install, and repair all types of tile flooring.
+                    If your current tile floors need some touch-ups or repairs, you can turn to
+                    our handymen for experienced and reliable services. Likewise, we have the tools
+                    and training needed to upgrade your home with brand new tiles.
+                </p>
             </div>
-      <button class="services-button-for-mobile accordion">Repairs <i class="fas fa-chevron-down"></i></button>
-        <p class="panel text-lg font-medium  mx-2 my-5 text-justify">
-          Do you have holes in your drywall? Your office desk 
-          started to get shaky? If so, it is time for you to get in touch with
-           the professional repairers at Tony. We can save you time 
-           and money by coming to you and performing all of the fixes 
-           that have been accumulating on your to-do list. We are your
-            one-call solution for all of the projects you need done
-           around your property and we provide workmanship you can trust.
-      </p>
-      </div>
 
-        <!-- Mobile View for Repairs ends here -->
+            <!--FOR MOBILE VIEW for flooring starts form here -->
 
-        <!-- CARD 3 and 4 -->
-
-        <div class="md:w-1/2 mb-10 md:pl-5 shadow-xl tablet-display">
-            <div class=" h-64 overflow-hidden">
-              <img alt="" class="object-cover object-center h-full w-full" src="images/carpentry.jpg">
+            <div class=" w-full mb-10 shadow-xl mobile-display">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="" class="object-cover object-center h-full w-full" src="images/flooring.jpg">
+                </div>
+                <button class="services-button-for-mobile accordion">Flooring <i class="fas fa-chevron-down"></i>
+                </button>
+                <p class="panel text-lg font-medium  mx-2 my-5 text-justify">
+                    Is it time to lay new floor tile in your bathroom? Want to
+                    renovate your house with new flooring? Whatever your vision,
+                    is here to do the heavy lifting for you.
+                    Our professionals can remove, install, and repair all types of tile flooring.
+                    If your current tile floors need some touch-ups or repairs, you can turn to
+                    our handymen for experienced and reliable services. Likewise, we have the tools
+                    and training needed to upgrade your home with brand new tiles.
+                </p>
             </div>
-            <button class="services-button">Carpentry</button>
-            <p class="leading-relaxed text-lg font-medium  mx-10 my-10 text-justify">
-                Looking for a stepless shower base or simply looking to fix
-                 that door that won't close properly?Tony offers the high-quality
-                  carpentry services you can depend on. We can handle everything
-                   from screen doors that have fallen off their tracks to moulding installation.
+
+            <!-- FOR MOBILE VIEW ENDS HERE for flooring -->
+
+            <div class="md:w-1/2 shadow-xl md:pl-5 mb-10 tablet-display ">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-full w-full" src="images/repairs.jpg">
+                </div>
+                <button class="services-button">Repairs</button>
+                <p class="leading-relaxed text-lg font-medium  mx-10 my-10 text-justify">
+                    Do you have holes in your drywall? Your office desk
+                    started to get shaky? If so, it is time for you to get in touch with
+                    the professional repairers at Tony. We can save you time
+                    and money by coming to you and performing all of the fixes
+                    that have been accumulating on your to-do list. We are your
+                    one-call solution for all of the projects you need done
+                    around your property and we provide workmanship you can trust.
+                </p>
+            </div>
+
+            <!-- Mobile view for Repair start form here -->
+
+            <div class=" w-full mb-10 shadow-xl mobile-display">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-full w-full" src="images/repairs.jpg">
+                </div>
+                <button class="services-button-for-mobile accordion">Repairs <i class="fas fa-chevron-down"></i>
+                </button>
+                <p class="panel text-lg font-medium  mx-2 my-5 text-justify">
+                    Do you have holes in your drywall? Your office desk
+                    started to get shaky? If so, it is time for you to get in touch with
+                    the professional repairers at Tony. We can save you time
+                    and money by coming to you and performing all of the fixes
+                    that have been accumulating on your to-do list. We are your
+                    one-call solution for all of the projects you need done
+                    around your property and we provide workmanship you can trust.
+                </p>
+            </div>
+
+            <!-- Mobile View for Repairs ends here -->
+
+            <!-- CARD 3 and 4 -->
+
+            <div class="md:w-1/2 mb-10 md:pl-5 shadow-xl tablet-display">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="" class="object-cover object-center h-full w-full" src="images/carpentry.jpg">
+                </div>
+                <button class="services-button">Carpentry</button>
+                <p class="leading-relaxed text-lg font-medium  mx-10 my-10 text-justify">
+                    Looking for a stepless shower base or simply looking to fix
+                    that door that won't close properly?Tony offers the high-quality
+                    carpentry services you can depend on. We can handle everything
+                    from screen doors that have fallen off their tracks to moulding installation.
                     Most importantly, we stand behind our workmanship,
-                 giving you confidence when you choose to work with our professional carpenters.
-            </p>
-          </div>
-
-
-
-<!-- Mobile view for Carpentry start form here -->
-
-<div class=" w-full mb-10 shadow-xl mobile-display">
-  <div class=" h-64 overflow-hidden">
-      <img alt="content" class="object-cover object-center h-full w-full" src="images/carpentry.jpg">
-    </div>
-<button class="services-button-for-mobile accordion">Carpentry <i class="fas fa-chevron-down"></i></button>
-<p class="panel text-lg font-medium  mx-2 my-5 text-justify">
-  Looking for a stepless shower base or simply looking to fix
-  that door that won't close properly?Tony offers the high-quality
-   carpentry services you can depend on. We can handle everything
-    from screen doors that have fallen off their tracks to moulding installation.
-     Most importantly, we stand behind our workmanship,
-  giving you confidence when you choose to work with our professional carpenters.
-</p>
-</div>
-
-<!-- Mobile View for carpentry ends here -->
-          <div class="md:w-1/2 md:pl-5 shadow-xl mb-10 tablet-display">
-            <div class=" h-64 overflow-hidden">
-              <img alt="content" class="object-cover object-center h-full w-full" src="images/bathroom.jpg">
-          </div>
-          <button class="services-button">Bathrooms</button>
-            <p class="leading-relaxed text-lgtext-base font-medium  mx-10 my-10 text-justify">
-                Everyone wants a beautiful, functional bathroom in their home.
-                 When you call Tony we can tackle all your remodeling, renovation,
-                  or maintenance tasks at once! We are your one-stop solution for 
-                  all your bathroom service needs. From repairing tile cracks to 
-                  restoring grout or installation of shower screens, we do it all. Planning on renovate
-                 the whole bathroom? We provide waterproof certificate as well!
-            </p>
-          </div>
-
-<!-- Mobile view for Bathrooms start form here -->
-
-<div class="w-full mb-10 shadow-xl mobile-display">
-  <div class=" h-64 overflow-hidden">
-      <img alt="content" class="object-cover object-center h-full w-full" src="images/bathroom.jpg">
-    </div>
-<button class="services-button-for-mobile accordion">Bathrooms <i class="fas fa-chevron-down"></i></button>
-<p class="panel text-lg font-medium  mx-2 my-5 text-justify">
-  Everyone wants a beautiful, functional bathroom in their home.
-  When you call Tony we can tackle all your remodeling, renovation,
-   or maintenance tasks at once! We are your one-stop solution for 
-   all your bathroom service needs. From repairing tile cracks to 
-   restoring grout or installation of shower screens, we do it all. Planning on renovate
-  the whole bathroom? We provide waterproof certificate as well!
-</p>
-</div>
-
-<!-- Mobile View for Bathrooms ends here -->
-
-          <!-- CARD 5 and 6 -->
-
-          <div class="md:w-1/2 md:pl-5 mb-10 shadow-xl tablet-display ">
-            <div class=" h-64 overflow-hidden">
-              <img alt="" class="object-cover object-center h-full w-full" src="images/commercials.jpg">
+                    giving you confidence when you choose to work with our professional carpenters.
+                </p>
             </div>
-            <button class="services-button">Commercial</button>        
-            <p class="leading-relaxed text-lg font-medium mx-10 my-10 text-justify">
-                We understand the challenges and obstacles that can come along with
-                running a business. Whether that might be food industry or healthcare,
-                 we've got extensive experience working in most commercial facilities.<br>
-               Let us help you maintain a respectable image and reputation.
-            </p>
-          </div>
-
-<!-- Mobile view for Commercial start form here -->
-
-<div class="w-full mb-10 shadow-xl mobile-display">
-  <div class=" h-64 overflow-hidden">
-      <img alt="" class="object-cover object-center h-full w-full" src="images/commercials.jpg">
-    </div>
-<button class="services-button-for-mobile accordion">Commercial <i class="fas fa-chevron-down"></i></button>
-<p class="panel text-lg font-medium  mx-2 my-5 text-justify">
-  We understand the challenges and obstacles that can come along with
-  running a business. Whether that might be food industry or healthcare,
-   we've got extensive experience working in most commercial facilities.<br>
- Let us help you maintain a respectable image and reputation.
-</p>
-</div>
-
-<!-- Mobile View for Commercial ends here -->
 
 
-          <div class="md:w-1/2 md:pl-5 shadow-xl mb-10 tablet-display">
-            <div class=" h-64 overflow-hidden">
-              <img alt="" class="object-cover object-center h-full w-full" src="images/exterior.jpg">
-          </div>
-          <button class="services-button">Exterior</button>
-            <p class="leading-relaxed text-lg font-medium mx-10 my-10 text-justify">
-                The outside of your house is often the first
-                 impression of your household. Maintaining the exterior
-                  of your home and its structural integrity can also prevent
-                   more costly repairs in the long run. Is your fence about to
-                    fall down, your gutter needs a seasonal clean or your pool 
+            <!-- Mobile view for Carpentry start form here -->
+
+            <div class=" w-full mb-10 shadow-xl mobile-display">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-full w-full" src="images/carpentry.jpg">
+                </div>
+                <button class="services-button-for-mobile accordion">Carpentry <i class="fas fa-chevron-down"></i>
+                </button>
+                <p class="panel text-lg font-medium  mx-2 my-5 text-justify">
+                    Looking for a stepless shower base or simply looking to fix
+                    that door that won't close properly?Tony offers the high-quality
+                    carpentry services you can depend on. We can handle everything
+                    from screen doors that have fallen off their tracks to moulding installation.
+                    Most importantly, we stand behind our workmanship,
+                    giving you confidence when you choose to work with our professional carpenters.
+                </p>
+            </div>
+
+            <!-- Mobile View for carpentry ends here -->
+            <div class="md:w-1/2 md:pl-5 shadow-xl mb-10 tablet-display">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-full w-full" src="images/bathroom.jpg">
+                </div>
+                <button class="services-button">Bathrooms</button>
+                <p class="leading-relaxed text-lgtext-base font-medium  mx-10 my-10 text-justify">
+                    Everyone wants a beautiful, functional bathroom in their home.
+                    When you call Tony we can tackle all your remodeling, renovation,
+                    or maintenance tasks at once! We are your one-stop solution for
+                    all your bathroom service needs. From repairing tile cracks to
+                    restoring grout or installation of shower screens, we do it all. Planning on renovate
+                    the whole bathroom? We provide waterproof certificate as well!
+                </p>
+            </div>
+
+            <!-- Mobile view for Bathrooms start form here -->
+
+            <div class="w-full mb-10 shadow-xl mobile-display">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-full w-full" src="images/bathroom.jpg">
+                </div>
+                <button class="services-button-for-mobile accordion">Bathrooms <i class="fas fa-chevron-down"></i>
+                </button>
+                <p class="panel text-lg font-medium  mx-2 my-5 text-justify">
+                    Everyone wants a beautiful, functional bathroom in their home.
+                    When you call Tony we can tackle all your remodeling, renovation,
+                    or maintenance tasks at once! We are your one-stop solution for
+                    all your bathroom service needs. From repairing tile cracks to
+                    restoring grout or installation of shower screens, we do it all. Planning on renovate
+                    the whole bathroom? We provide waterproof certificate as well!
+                </p>
+            </div>
+
+            <!-- Mobile View for Bathrooms ends here -->
+
+            <!-- CARD 5 and 6 -->
+
+            <div class="md:w-1/2 md:pl-5 mb-10 shadow-xl tablet-display ">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="" class="object-cover object-center h-full w-full" src="images/commercials.jpg">
+                </div>
+                <button class="services-button">Commercial</button>
+                <p class="leading-relaxed text-lg font-medium mx-10 my-10 text-justify">
+                    We understand the challenges and obstacles that can come along with
+                    running a business. Whether that might be food industry or healthcare,
+                    we've got extensive experience working in most commercial facilities.<br>
+                    Let us help you maintain a respectable image and reputation.
+                </p>
+            </div>
+
+            <!-- Mobile view for Commercial start form here -->
+
+            <div class="w-full mb-10 shadow-xl mobile-display">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="" class="object-cover object-center h-full w-full" src="images/commercials.jpg">
+                </div>
+                <button class="services-button-for-mobile accordion">Commercial <i class="fas fa-chevron-down"></i>
+                </button>
+                <p class="panel text-lg font-medium  mx-2 my-5 text-justify">
+                    We understand the challenges and obstacles that can come along with
+                    running a business. Whether that might be food industry or healthcare,
+                    we've got extensive experience working in most commercial facilities.<br>
+                    Let us help you maintain a respectable image and reputation.
+                </p>
+            </div>
+
+            <!-- Mobile View for Commercial ends here -->
+
+
+            <div class="md:w-1/2 md:pl-5 shadow-xl mb-10 tablet-display">
+                <div class=" h-64 overflow-hidden">
+                    <img alt="" class="object-cover object-center h-full w-full" src="images/exterior.jpg">
+                </div>
+                <button class="services-button">Exterior</button>
+                <p class="leading-relaxed text-lg font-medium mx-10 my-10 text-justify">
+                    The outside of your house is often the first
+                    impression of your household. Maintaining the exterior
+                    of your home and its structural integrity can also prevent
+                    more costly repairs in the long run. Is your fence about to
+                    fall down, your gutter needs a seasonal clean or your pool
                     tiles are popping off? We tackle several exterior issues that
-                     your property may face. Doesn't matter if it's a complete 
-                     re-build or just a small patch-up. You know who you're going 
-                     to call. Ask Tony!
-            </p>
-          </div>
+                    your property may face. Doesn't matter if it's a complete
+                    re-build or just a small patch-up. You know who you're going
+                    to call. Ask Tony!
+                </p>
+            </div>
 
 
+            <!-- Mobile view for Exterior start form here -->
 
-<!-- Mobile view for Exterior start form here -->
-
-<div class="w-full mb-10 shadow-xl mobile-display">
-  <div class="h-64 overflow-hidden">
-      <img alt="content" class="object-cover object-center  h-full w-full" src="images/exterior.jpg">
-    </div>
-<button class="services-button-for-mobile accordion">Exterior <i class="fas fa-chevron-down"></i></button>
-<p class="panel text-black text-lg font-medium  mx-2 my-5 text-justify">
-                The outside of your house is often the first
-                 impression of your household. Maintaining the exterior
-                  of your home and its structural integrity can also prevent
-                   more costly repairs in the long run. Is your fence about to
-                    fall down, your gutter needs a seasonal clean or your pool 
+            <div class="w-full mb-10 shadow-xl mobile-display">
+                <div class="h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center  h-full w-full" src="images/exterior.jpg">
+                </div>
+                <button class="services-button-for-mobile accordion">Exterior <i class="fas fa-chevron-down"></i>
+                </button>
+                <p class="panel text-black text-lg font-medium  mx-2 my-5 text-justify">
+                    The outside of your house is often the first
+                    impression of your household. Maintaining the exterior
+                    of your home and its structural integrity can also prevent
+                    more costly repairs in the long run. Is your fence about to
+                    fall down, your gutter needs a seasonal clean or your pool
                     tiles are popping off? We tackle several exterior issues that
-                     your property may face. Doesn't matter if it's a complete 
-                     re-build or just a small patch-up. You know who you're going 
-                     to call. Ask Tony!
-</p>
-</div>
+                    your property may face. Doesn't matter if it's a complete
+                    re-build or just a small patch-up. You know who you're going
+                    to call. Ask Tony!
+                </p>
+            </div>
 
-<!-- Mobile View for Exterior ends here -->
+            <!-- Mobile View for Exterior ends here -->
 
 
-      </div>
+        </div>
     </div>
-  </section>
+</section>
 
 
 <!-- *-*-*-*-*-*- SERVICES SECTION ENDS HERE *-*-*-*-*-*-*-* -->
- 
-
 
 
 <!--*-*-*-*-*-*- ABOUT US SECTION START FROM HERE*-*-*-*-*-*-*-*-*-->
@@ -387,69 +394,77 @@ and training needed to upgrade your home with brand new tiles.
 <div class="lg:w-4/5 md:w-full m-auto lg:px-1 sm:px-5 px-4">
     <!-- <div class="h-auto" style="background-image: url('images/tony.jpg');">
         </div> -->
-    <img src="images/tony.jpg" class="w-full max-h-screen object-cover lg:object-center md:object-right "  alt="">
+    <img src="images/tony.jpg" class="w-full max-h-screen object-cover lg:object-center md:object-right " alt="">
 
-            <h1 class="text-6xl ml-2 comon-heading pt-2 my-6 font-black lg:text-justify md:text-justify">About Us</h1>
-        <div class="text-xl leading-8 lg:px-1 md:px-5">
-            <p>
-                Founded by Anthony, AskTony is a growing maintenance business focused on <b> domestic and commercial odd issues.</b>
-                <br><br>
-                With his <b>14 years of experience</b> in the trade industry Anthony has been able to acquire several skills. 
-                He started working with a master tiler back in Italy while he was studying Electrical trade, once graduated he worked as an electrician then after a few years he moved to Australia. 
-                Working as <b>Fencer and home/office renovations</b> then back to tiling, bathroom renovations and general maintenance, he built both the knowledge and the network that enabled him to create AskTony and the team that stands with it.
-<br><br>
-None of this would be possible without the help of our expertise, Corey, Joe, James and Freddy.
-<br><br>
-Given his passion about technology, Anthony with AskTony proudly partnered up with the young startup Feex helping the team and its founder on a mission to change the world of tradies and homeowners. 
-            </p>
-        </div>
+    <h1 class="text-6xl ml-2 comon-heading pt-2 my-6 font-black lg:text-justify md:text-justify">About Us</h1>
+    <div class="text-xl leading-8 lg:px-1 md:px-5">
+        <p>
+            Founded by Anthony, AskTony is a growing maintenance business focused on <b> domestic and commercial odd
+            issues.</b>
+            <br><br>
+            With his <b>14 years of experience</b> in the trade industry Anthony has been able to acquire several
+            skills.
+            He started working with a master tiler back in Italy while he was studying Electrical trade, once graduated
+            he worked as an electrician then after a few years he moved to Australia.
+            Working as <b>Fencer and home/office renovations</b> then back to tiling, bathroom renovations and general
+            maintenance, he built both the knowledge and the network that enabled him to create AskTony and the team
+            that stands with it.
+            <br><br>
+            None of this would be possible without the help of our expertise, Corey, Joe, James and Freddy.
+            <br><br>
+            Given his passion about technology, Anthony with AskTony proudly partnered up with the young startup Feex
+            helping the team and its founder on a mission to change the world of tradies and homeowners.
+        </p>
+    </div>
 </div>
 
 <!--*-*-*-*-*-*-* ABOUT US SECTION END HERE *-*-*-*-*-*-*- -->
 
 <!--*-*-*-*-*-*- FOOTER SECTION START FROM HERE *-*-*-*-*-*-*- -->
 <footer>
-<div class="footer-section mt-20 md:h-80 w-full">
-      <h1 class="text-6xl ml-2 text-white pt-10 my-6 font-extrabold lg:text-center md:text-justify "> Contact Us</h1>
+    <div class="footer-section mt-20 md:h-80 w-full">
+        <h1 class="text-6xl ml-2 text-white pt-10 my-6 font-extrabold lg:text-center md:text-justify "> Contact Us</h1>
         <div class="w-max sm:text-justify lg:m-auto md:ml-5 xm:m-auto text-white">
             <ul class="text-xl lg:ml-20 ml-5">
-            <li class="mt-3"><i class="fas fa-mobile"></i> &nbsp;0451644016</li>
+                <li class="mt-3"><i class="fas fa-mobile"></i> &nbsp;0451644016</li>
                 <li class="mt-3"><i class="fab fa-whatsapp"></i> &nbsp;0451644016</li>
-                <li  class=" mt-3 pl-22"><i class="fas fa-envelope"></i> &nbsp;asktony.handyman@gmail.com</li>
+                <li class=" mt-3 pl-22"><i class="fas fa-envelope"></i> &nbsp;asktony.handyman@gmail.com</li>
             </ul>
         </div>
-        <p class="text-white text-xl lg:text-right sm:text-center lg:mx-15 my-10 ml-5">© Ask Tony. All Rights Reserved.</p>
-    <div class="curved-element-for-mobile relative">
-       
-        
+        <p class="text-white text-xl lg:text-right sm:text-center lg:mx-15 my-10 ml-5">© Ask Tony. All Rights
+            Reserved.</p>
+        <div class="curved-element-for-mobile relative">
+
+
             <img src="images/moviephone.png" class="movie-phone-image" width="50px" alt="">
-     <div class="mx-auto">
-<p class="text-lg text-center">
-    Simply <br>
-   <b>UPLOAD A VIDEO</b><br>
-    of your issue HERE 
-    to get a<br> quote in a couple of hours! <br>
-</p>
+            <div class="mx-auto">
+                <p class="text-lg text-center">
+                    Simply <br>
+                    <b>UPLOAD A VIDEO</b><br>
+                    of your issue HERE
+                    to get a<br> quote in a couple of hours! <br>
+                </p>
+            </div>
+        </div>
     </div>
-</div></div>
 </footer>
-    {{ partial "footer.html" . }}
+{{ partial "footer.html" . }}
 <!--*-*-*-*-*-*-*-*-- FOOTER SECTION ENDS HERE *-*-*-*-*-*-*-*-*-*- -->
 <script>
-  var acc = document.getElementsByClassName("services-button-for-mobile");
-  var i;
-  
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
-  }
-  </script>
+    var acc = document.getElementsByClassName("services-button-for-mobile");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
 </body>
 </html>

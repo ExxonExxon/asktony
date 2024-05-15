@@ -136,7 +136,7 @@ border-bottom-left-radius: 247px;
   width:450px;
 }
 .curved-element-for-mobile{
- 
+
   display:none;
 }
 }
@@ -156,7 +156,7 @@ border-bottom-left-radius: 247px;
 }
 
 .movie-paragraph{
-  font-size:13px ! important; 
+  font-size:13px ! important;
   position:absolute;
   top:25px;
   right:5px;
@@ -171,7 +171,7 @@ border-bottom-left-radius: 247px;
     display:none;
   }
   .curved-element-for-mobile{
-    
+
     display:block;
   }
 }
@@ -191,7 +191,7 @@ border-bottom-left-radius: 247px;
 }
 
 .movie-paragraph{
-  font-size:20px; 
+  font-size:20px;
   font-family:ubuntu-regular;
   position:absolute;
   top:25px;

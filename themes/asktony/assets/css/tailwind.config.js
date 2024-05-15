@@ -1,11 +1,9 @@
 const themeDir = __dirname + '/../../';
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  theme: {
-    content: [`${themeDir}/layouts/**/*.html`, `${themeDir}/content/**/*.md`],
-    extend: {}
-  },
-  variants: {},
-  plugins: []
+    content: [
+        `${themeDir}/layouts/**/*.html`,
+        `${themeDir}/content/**/*.md`
+    ],
 }
-
