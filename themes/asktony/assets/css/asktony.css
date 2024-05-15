@@ -1,0 +1,302 @@
+@font-face {
+  font-family: ubuntu-regular;
+  src: url(fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: ubuntu-medium;
+  src: url(fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+  font-family: ubuntu-light;
+  src: url(fonts/Ubuntu-Light.ttf);
+}
+@font-face {
+  font-family: ubuntu-bold;
+  src: url(fonts/Ubuntu-Bold.ttf);
+}
+
+/* Giving custom font-family to whole page */
+body
+{
+  font-family:ubuntu-light; overflow-x: hidden;
+}
+/* Giving particular size to Menubar  Buttons */
+nav{
+  font-family:ubuntu-regular;
+  font-size:18px;
+}
+/* Giving Bottom green border in Menu bar selected items */
+.border-b-4{
+  border-bottom: 4px solid #93ED5E;
+}
+/* RESPONSIVE NAVBAR STARTING FROM HERE */
+@media (max-width: 767px) {
+  .navicon{
+    width: 1.125em;
+    height: 0.125em;
+  }
+  .navicon::before,
+  .navicon::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-out;
+    content: '';
+    background: #3D4852;
+  }
+  .navicon::before {
+    top: 5px;
+  }
+  .navicon::after {
+    top: -5px;
+  }
+  .menu-btn:not(:checked) ~ .menu {
+    display: none;
+  }
+  .menu-btn:checked ~ .menu {
+    display: block;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon::before {
+    transform: rotate(-45deg);
+  }
+  .menu-btn:checked ~ .menu-icon .navicon::after {
+    transform: rotate(45deg);
+  }
+  .menu-btn:checked ~ .menu-icon .navicon::before,
+  .menu-btn:checked ~ .menu-icon .navicon::after {
+    top: 0;
+  }
+}
+/* RESPONSIVE NAVBAR ENDING HERE */
+
+/* After Navbar  TOP Banner Heading */
+.header-banner-heading{
+  font-family: ubuntu-bold;
+  font-weight:700;
+  font-size:3em;
+  font-size: vw;
+  line-height:50px;
+}
+
+@media (max-width:768px){
+  .header-banner-heading{
+    font-family: ubuntu-bold;
+    font-weight:700;
+    font-size:1.4em;
+    line-height:20px;
+    margin-left: 20px;
+  }
+}
+/* LOGO MOVING RIGHT */
+@media (min-width:800px){
+.logo-img{
+  margin-left:80px
+}
+}
+ .header-banner-heading-border{
+  border-bottom: 5px solid #93ED5E;
+ }
+/* Footer Section  start from here */
+.footer-section{
+  background-color: #193674;
+  position:relative;
+}
+.curved-element{
+  background-color:#93ED5E;
+  height:180px;
+  width:450px;
+  position:absolute;
+  right:0;
+  top: -50px;
+-webkit-border-top-left-radius: 247px;
+-webkit-border-bottom-left-radius: 247px;
+-moz-border-radius-topleft: 247px;
+-moz-border-radius-bottomleft: 247px;
+border-top-left-radius: 247px;
+border-bottom-left-radius: 247px;
+}
+.curved-element-for-mobile{
+  background-color:#93ED5E;
+  height:auto;
+  width: 100%;
+  /* position:absolute; */
+  bottom:0;
+
+
+  display:none;
+}
+
+@media (max-width:1100px){
+.curved-element{
+  height:180px;
+  width:450px;
+}
+.curved-element-for-mobile{
+ 
+  display:none;
+}
+}
+
+@media (max-width:768px){
+
+.curved-element{
+  background-color:#93ED5E;
+  height:120px;
+  width:300px;
+}
+
+.movie-phone-image{
+  position:absolute;
+  left:40px;
+  top: 20px ! important;
+}
+
+.movie-paragraph{
+  font-size:13px ! important; 
+  position:absolute;
+  top:25px;
+  right:5px;
+}
+
+
+}
+
+
+@media (max-width:600px){
+  .curved-element{
+    display:none;
+  }
+  .curved-element-for-mobile{
+    
+    display:block;
+  }
+}
+
+
+
+
+.inner-movie{
+  position:relative;
+
+}
+
+.movie-phone-image{
+  position:absolute;
+  left:40px;
+  top: 40px;
+}
+
+.movie-paragraph{
+  font-size:20px; 
+  font-family:ubuntu-regular;
+  position:absolute;
+  top:25px;
+  right:5px;
+}
+
+.movie-phone-image{
+  position:absolute;
+  left:20px;
+  text-align:center;
+  bottom:5px;
+}
+
+@media (min-width:768px){
+.curved-element{
+  display:block;
+}
+.curved-element-for-mobile{
+  display:none;
+}
+}
+.services-button{
+  width:55%;
+  padding:20px 0;
+  margin:0 auto;
+  z-index:-1;
+  background-color:#193674;
+  color:white;
+  margin-top:-50px;
+  padding-bottom:-10px;
+  padding-top:20px;
+  font-size: 25px;
+  font-weight:bold;
+}
+@media (max-width:600px){
+  .services-button{
+    width:70%;
+  }
+  .secvices-container{
+    width:95%;
+  }
+}
+.max-h-0 {
+  max-height: 0;
+}
+.services-button-for-mobile{
+width:100%;
+  padding:20px 0;
+  margin:0 auto;
+  z-index:-1;
+  background-color:#193674;
+  color:white;
+  margin-top:-5px;
+  font-size: 25px;
+  font-weight:bold;
+}
+.accordion {
+  width:100%;
+  padding:20px 0;
+  margin:0 auto;
+  z-index:-1;color:black;
+  background-color:#193674;
+  color:white;
+  margin-top:-5px;
+  font-size: 25px;
+  font-weight:bold;
+  transition: 0.4s;
+}
+.accordion i{
+  margin-left:50px;
+}
+.active, .accordion:hover > .accordion i{
+  background-color:#0b265f;
+}
+.active .accordion i{
+  color:rgb(121, 121, 230);
+}
+.panel {
+  display: none;
+}
+.accordion:after > .accordion i{
+  font-weight: bold;
+  float: right;
+}
+@media (min-width:768px){
+.tablet-display{
+display:block;
+}
+.mobile-display{
+  display:none;
+}
+}
+@media (max-width:768px){
+  .tablet-display{
+  display:none;
+  }
+  .mobile-display{
+    display:block;
+  }
+  }
+.common-heading-color{
+  color:#0b265f;
+}
+  .comon-heading{
+    color:#0b265f;
+    font-family: ubuntu-bold;
+    font-weight:700;
+  }
