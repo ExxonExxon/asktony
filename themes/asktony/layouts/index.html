@@ -1,0 +1,136 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="min-h-[80vh] flex flex-col items-center justify-center bg-white px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto w-full pt-32 pb-16 text-center space-y-12">
+        <div class="animate-fade-up opacity-0">
+            <span class="px-4 py-1.5 bg-gray-50 text-gray-500 text-[10px] font-black tracking-[0.3em] rounded-full uppercase">Powered by Tradsiee</span>
+        </div>
+        
+        <h1 class="text-6xl lg:text-9xl font-black tracking-tighter text-black leading-[0.9] animate-fade-up opacity-0 delay-100">
+            Expert maintenance. <br>
+            <span class="text-gray-300">Mastered locally.</span>
+        </h1>
+
+        <p class="text-lg lg:text-2xl text-gray-400 font-medium max-w-3xl mx-auto leading-tight animate-fade-up opacity-0 delay-200">
+            Professional domestic and commercial maintenance across Melbourne. <br class="hidden md:block">
+            Built on <span class="text-black">precision, trust, and 14 years of trade expertise.</span>
+        </p>
+
+        <div class="pt-8 animate-fade-up opacity-0 delay-300">
+            <a href="https://tradsiee.com" class="inline-flex flex-col items-center px-12 py-6 bg-black text-white text-[15px] font-bold rounded-full hover:bg-gray-800 transition-all shadow-xl group">
+                <span class="flex items-center space-x-3">
+                    <img src="/images/video_smartphone.svg" alt="" class="h-5 w-auto invert opacity-80">
+                    <span>Send a video to Anthony</span>
+                </span>
+                <span class="text-[9px] uppercase tracking-widest opacity-40 mt-1 font-black">Powered by Tradsiee</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Visual -->
+<section class="pb-24 lg:pb-32 bg-white px-6 border-b border-gray-50">
+    <div class="max-w-7xl mx-auto">
+        <div class="relative w-full aspect-[21/9] lg:aspect-[32/10] overflow-hidden rounded-[2rem] lg:rounded-[3rem] shadow-2xl animate-fade-up opacity-0 delay-300">
+            <img src="/images/header.jpg" alt="AskTony Handyman" class="w-full h-full object-cover grayscale-[20%]">
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section id="how-it-works" class="py-24 lg:py-32 bg-white border-b border-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mb-24 space-y-4">
+            <h2 class="text-4xl lg:text-6xl font-black text-black tracking-tighter leading-none">The standard.</h2>
+            <p class="text-xl text-gray-400 font-medium leading-tight">No site visits for initial quotes. No wasted time. Just a professional response from Anthony, faster than ever.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="space-y-8 p-10 bg-gray-50/50 rounded-[2.5rem]">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">Step 01</span>
+                <div class="space-y-4">
+                    <h3 class="text-3xl font-black text-black tracking-tighter">Record a Video</h3>
+                    <p class="text-gray-500 font-medium leading-relaxed">Use our Tradsiee integration to film the issue. It gives Anthony the context he needs to evaluate the job instantly.</p>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="space-y-8 p-10 bg-gray-50/50 rounded-[2.5rem]">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">Step 02</span>
+                <div class="space-y-4">
+                    <h3 class="text-3xl font-black text-black tracking-tighter">Anthony Reviews</h3>
+                    <p class="text-gray-500 font-medium leading-relaxed">Anthony personally reviews your footage and sends a message back with a precise response. No guesswork required.</p>
+                </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="space-y-8 p-10 bg-gray-50/50 rounded-[2.5rem]">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">Step 03</span>
+                <div class="space-y-4">
+                    <h3 class="text-3xl font-black text-black tracking-tighter">Ready to Work</h3>
+                    <p class="text-gray-500 font-medium leading-relaxed">We arrive with the correct parts and tools, ready to fix the problem correctly on the very first visit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-24 lg:py-32 bg-white border-b border-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-24 gap-8">
+            <h2 class="text-5xl lg:text-8xl font-black text-black tracking-tighter leading-none">Services.</h2>
+            <p class="text-xl text-gray-400 font-medium max-w-sm">A full-suite trade network for every corner of your home or business.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{ $services := slice 
+                (dict "title" "Flooring" "img" "flooring.jpg" "desc" "Precision installation of tile, timber, and laminate surfaces.")
+                (dict "title" "Repairs" "img" "repairs.jpg" "desc" "Flawless drywall, plastering, and structural maintenance.")
+                (dict "title" "Carpentry" "img" "carpentry.jpg" "desc" "Custom timber work, decking, and bespoke shelving solutions.")
+                (dict "title" "Bathrooms" "img" "bathroom.jpg" "desc" "Complete renovations with full waterproofing certification.")
+                (dict "title" "Commercial" "img" "commercials.jpg" "desc" "Facility maintenance for healthcare, retail, and hospitality.")
+                (dict "title" "Exterior" "img" "exterior.jpg" "desc" "High-end fencing, gutter care, and pool area restoration.")
+            }}
+
+            {{ range $services }}
+            <div class="relative aspect-video overflow-hidden rounded-[2rem] group border border-gray-50">
+                <img src="/images/{{ .img }}" alt="{{ .title }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8 space-y-2">
+                    <h3 class="text-2xl font-black text-white tracking-tighter">{{ .title }}</h3>
+                    <p class="text-gray-300 font-medium text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">{{ .desc }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-24 lg:py-48 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
+        <div class="relative order-2 lg:order-1">
+            <img src="/images/tony.jpg" alt="Anthony" class="relative z-10 rounded-[2.5rem] grayscale hover:grayscale-0 transition-all duration-1000 w-full shadow-2xl">
+        </div>
+        <div class="space-y-12 order-1 lg:order-2">
+            <h2 class="text-5xl lg:text-7xl font-black tracking-tighter text-black leading-none">The story.</h2>
+            <div class="space-y-10 text-xl text-gray-500 font-medium leading-relaxed">
+                <p>
+                    Founded by Anthony, AskTony is more than just a maintenance service. It's a commitment to <span class="text-black">craftsmanship and technical innovation.</span>
+                </p>
+                <p>
+                    With 14 years of trade experience spanning from Italy to Melbourne, Anthony has built a network defined by precision. By integrating tools like <span class="text-black italic">Tradsiee</span>, we've removed the friction from the repair process.
+                </p>
+                
+                <div class="p-8 bg-gray-50 rounded-[2rem] border-l-4 border-black space-y-4">
+                    <p class="text-black font-black italic text-2xl tracking-tighter leading-tight">
+                        "Precision isn't just a goal—it's the only way we work."
+                    </p>
+                    <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest leading-relaxed">
+                        None of this would be possible without <span class="text-black">Corey, Joe, James and Freddy.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
