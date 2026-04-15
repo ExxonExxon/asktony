@@ -1,6 +1,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<meta name="description" content="Ask Tony | Expert Wall & Floor Tiler in Melbourne. Send a video of your job via Tradsiee for an instant quote. 14+ years of precision trade experience in bathroom tiling, kitchen splashbacks, and commercial projects.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}">
+<meta property="og:description" content="Expert wall and floor tiling in Melbourne. Send a video via Tradsiee for an instant quote and skip the guesswork. 14+ years of precision trade experience.">
+<meta property="og:image" content="{{ `/images/logo.png` | absURL }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}">
+<meta property="twitter:description" content="Expert wall and floor tiling in Melbourne. Send a video via Tradsiee for an instant quote and skip the guesswork. 14+ years of precision trade experience.">
+<meta property="twitter:image" content="{{ `/images/logo.png` | absURL }}">
 
 {{ $time := now }}
 {{ $styles := resources.Get "css/styles.scss"
@@ -12,7 +27,7 @@
 {{ if hugo.IsServer }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 {{ else }}
-    {{ $styles := $styles | minify | fingerprint | resources.PostCSS }}
+    {{ $styles := $styles | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 {{ end }}
 

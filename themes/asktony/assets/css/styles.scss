@@ -2,25 +2,82 @@
 @import "node_modules/tailwindcss/components";
 @import "node_modules/tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @layer base {
   body {
-    @apply bg-white text-black font-sans antialiased tracking-tight;
+    /* Pure white background, no noise */
+    @apply bg-white text-[#1c1917] font-sans antialiased tracking-tight overflow-x-hidden;
     font-family: 'Inter', sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', serif;
   }
 }
 
-/* Base animations */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(30px); }
+@layer components {
+  /* Design Tokens */
+  .radius-sm { @apply rounded-2xl; }
+  .radius-md { @apply rounded-[2.5rem]; }
+  .radius-lg { @apply rounded-[4rem] lg:rounded-[5rem]; }
+  
+  /* Subtle, neutral shadows */
+  .shadow-soft { @apply shadow-lg shadow-black/[0.03]; }
+  .shadow-heavy { @apply shadow-2xl shadow-black/[0.05]; }
+  
+  /* Faster, simpler transitions */
+  .transition-standard { @apply transition-all duration-500 ease-in-out; }
+
+  .glass-navbar {
+    @apply bg-white/80 backdrop-blur-xl border border-stone-100 shadow-soft;
+  }
+  
+  .glass-card {
+    @apply bg-white border border-stone-100 shadow-soft transition-standard;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-[#1c1917] text-white text-[11px] font-black rounded-full hover:bg-black transition-standard shadow-sm hover:scale-105 uppercase tracking-[0.3em];
+  }
+
+  .section-padding {
+    @apply py-24 lg:py-32;
+  }
+
+  .heading-xl {
+    @apply text-6xl lg:text-[8rem] font-black tracking-tighter leading-[0.85] text-black;
+  }
+
+  .heading-lg {
+    @apply text-5xl lg:text-7xl font-black tracking-tighter leading-none text-black;
+  }
+  
+  .heading-md {
+    @apply text-4xl lg:text-5xl font-black tracking-tighter leading-tight text-black;
+  }
+
+  .text-readable {
+    @apply text-stone-500 font-medium leading-relaxed;
+  }
+}
+
+/* Snappier Fade Animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-up {
-  animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.reveal-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
+/* Selection */
+::selection {
+  @apply bg-[#1c1917] text-white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { @apply bg-white; }
+::-webkit-scrollbar-thumb { @apply bg-stone-200 rounded-full hover:bg-stone-300; }

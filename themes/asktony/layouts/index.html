@@ -1,73 +1,145 @@
 {{ define "main" }}
 <!-- Hero Section -->
-<section class="min-h-[80vh] flex flex-col items-center justify-center bg-white px-6 overflow-hidden">
-    <div class="max-w-7xl mx-auto w-full pt-32 pb-16 text-center space-y-12">
-        <div class="animate-fade-up opacity-0">
-            <span class="px-4 py-1.5 bg-gray-50 text-gray-500 text-[10px] font-black tracking-[0.3em] rounded-full uppercase">Powered by Tradsiee</span>
-        </div>
-        
-        <h1 class="text-6xl lg:text-9xl font-black tracking-tighter text-black leading-[0.9] animate-fade-up opacity-0 delay-100">
-            Expert maintenance. <br>
-            <span class="text-gray-300">Mastered locally.</span>
+<section class="min-h-screen flex flex-col items-center justify-center px-6 relative bg-white">
+    <div class="max-w-7xl mx-auto w-full pt-48 pb-24 text-center space-y-16">
+        <h1 class="heading-xl reveal-up" style="animation-delay: 100ms">
+            Expert Tiling.<br>
+            <span class="text-stone-400 font-serif italic font-normal">Affordable Pricing.</span>
         </h1>
 
-        <p class="text-lg lg:text-2xl text-gray-400 font-medium max-w-3xl mx-auto leading-tight animate-fade-up opacity-0 delay-200">
-            Professional domestic and commercial maintenance across Melbourne. <br class="hidden md:block">
-            Built on <span class="text-black">precision, trust, and 14 years of trade expertise.</span>
+        <p class="text-lg lg:text-3xl text-stone-600 font-bold max-w-2xl mx-auto leading-tight reveal-up" style="animation-delay: 300ms">
+            Mastered wall and floor tiling across Melbourne. No phone tag, no guesswork—just precision work at a price that makes sense.
         </p>
 
-        <div class="pt-8 animate-fade-up opacity-0 delay-300">
-            <a href="https://tradsiee.com" class="inline-flex flex-col items-center px-12 py-6 bg-black text-white text-[15px] font-bold rounded-full hover:bg-gray-800 transition-all shadow-xl group">
-                <span class="flex items-center space-x-3">
-                    <img src="/images/video_smartphone.svg" alt="" class="h-5 w-auto invert opacity-80">
-                    <span>Send a video to Anthony</span>
+        <div class="pt-4 flex flex-col items-center space-y-8 reveal-up" style="animation-delay: 500ms">
+            <a href="https://tradsiee.com" class="inline-flex flex-col items-center btn-primary !px-16 !py-8 group !bg-[#1c1917]">
+                <span class="flex items-center space-x-4">
+                    <img src="/images/video_smartphone.svg" alt="" class="h-6 w-auto invert opacity-90 group-hover:opacity-100 transition-opacity">
+                    <span class="text-lg">Send a Tiling Video for a Quote</span>
                 </span>
-                <span class="text-[9px] uppercase tracking-widest opacity-40 mt-1 font-black">Powered by Tradsiee</span>
             </a>
+            
+            <div class="flex flex-col items-center space-y-2 opacity-60">
+                <div class="flex space-x-1 text-stone-900">
+                    <i class="fas fa-star text-[10px]"></i>
+                    <i class="fas fa-star text-[10px]"></i>
+                    <i class="fas fa-star text-[10px]"></i>
+                    <i class="fas fa-star text-[10px]"></i>
+                    <i class="fas fa-star text-[10px]"></i>
+                </div>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em]">5.0 Google Rating • Melbourne Trusted</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Hero Visual -->
-<section class="pb-24 lg:pb-32 bg-white px-6 border-b border-gray-50">
-    <div class="max-w-7xl mx-auto">
-        <div class="relative w-full aspect-[21/9] lg:aspect-[32/10] overflow-hidden rounded-[2rem] lg:rounded-[3rem] shadow-2xl animate-fade-up opacity-0 delay-300">
-            <img src="/images/header.jpg" alt="AskTony Handyman" class="w-full h-full object-cover grayscale-[20%]">
+<!-- Hero Visual & Intro Text -->
+<section class="section-padding px-6 bg-white border-y border-stone-200">
+    <div class="max-w-7xl mx-auto space-y-32 lg:space-y-48">
+        <div class="relative w-full aspect-[16/9] lg:aspect-[21/7] overflow-hidden radius-lg shadow-heavy border-4 border-white reveal-up">
+            <img src="/images/header.jpg" alt="Ask Tony | Wall & Floor Tiler" class="w-full h-full object-cover hover:scale-105 transition-standard">
+        </div>
+
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-24 items-start">
+            <h2 class="heading-lg reveal-up"><span class="font-serif italic font-normal text-stone-400">The</span> <br>Standard.</h2>
+            <div class="text-xl lg:text-2xl text-readable reveal-up" style="animation-delay: 200ms">
+                <p>
+                    Hundreds of Melbourne locals have trusted Anthony for precision wall and floor tiling since 2015. By utilizing <span class="font-serif italic font-bold">Tradsiee</span> to send a video, we’ve eliminated guesswork and wasted site visits—ensuring your tiling job is understood before we even arrive.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Process Section -->
-<section id="how-it-works" class="py-24 lg:py-32 bg-white border-b border-gray-50">
+<!-- About Section (Moved Up for Immediate Trust) -->
+<section id="about" class="section-padding bg-stone-900 text-white overflow-hidden radius-lg mx-4 lg:mx-8 my-16 relative shadow-heavy">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 space-y-32 lg:space-y-48">
+        <!-- Top Row: Portraits & Quote -->
+        <div class="grid lg:grid-cols-12 gap-24 items-center">
+            <div class="lg:col-span-5 relative group reveal-up">
+                <img src="/images/tony.jpg" alt="Anthony" class="relative z-10 radius-md transition-standard w-full shadow-2xl border-2 border-white/10 group-hover:scale-[1.02]">
+            </div>
+            <div class="lg:col-span-7 space-y-12 reveal-up" style="animation-delay: 200ms">
+                <div class="flex items-center space-x-6">
+                    <h2 class="text-[11px] font-black text-stone-500 uppercase tracking-[0.6em]">The Story</h2>
+                    <span class="px-5 py-2 bg-white/10 radius-sm text-[10px] font-black uppercase tracking-widest text-stone-300 border border-white/10">14+ Years Tiling Experience</span>
+                </div>
+                <p class="text-white font-serif italic font-normal text-5xl lg:text-7xl tracking-tighter leading-[1.1]">
+                    "Precision tiling isn't just a goal—it's the only way we work."
+                </p>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Text Content & Team -->
+        <div class="grid lg:grid-cols-12 gap-24 items-start">
+            <div class="lg:col-span-5 reveal-up" style="animation-delay: 600ms">
+                <div class="space-y-10">
+                    <div class="space-y-6">
+                        <p class="text-[10px] font-black text-stone-600 uppercase tracking-[0.4em]">The Standard</p>
+                        <p class="text-stone-300 font-bold text-3xl lg:text-4xl tracking-tight leading-tight">Mastered tiling defined by precision and trade expertise.</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="h-px w-12 bg-stone-700"></span>
+                        <span class="text-[10px] font-serif italic text-stone-500">Mastered Locally</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-7 reveal-up" style="animation-delay: 400ms">
+                <div class="space-y-12 text-xl lg:text-2xl text-stone-400 font-bold leading-relaxed max-w-3xl">
+                    <p>
+                        Ask Tony is a commitment to <span class="text-white underline decoration-stone-700 underline-offset-8">craftsmanship and technical innovation.</span>
+                    </p>
+                    <p>
+                        With 14 years of trade experience in Melbourne, Anthony provides a superior, efficient tiling service by embracing the <span class="text-white font-bold italic font-serif">Tradsiee</span> mission to change the world of trade services.
+                    </p>
+                    <p>
+                        Every tiling job is understood perfectly through video context before we even step on site.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bento Box Grid for "The Process" -->
+<section id="how-it-works" class="section-padding bg-white relative">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-2xl mb-24 space-y-4">
-            <h2 class="text-4xl lg:text-6xl font-black text-black tracking-tighter leading-none">The standard.</h2>
-            <p class="text-xl text-gray-400 font-medium leading-tight">No site visits for initial quotes. No wasted time. Just a professional response from Anthony, faster than ever.</p>
+        <div class="max-w-3xl mb-32 space-y-8 reveal-up">
+            <h2 class="heading-lg">No <span class="font-serif italic font-normal text-stone-400">Phone Calls</span> <br>Necessary.</h2>
+            <p class="text-2xl text-stone-600 font-bold leading-tight">Skip the initial site visit. Get a precision tiling quote just by sending a video through Tradsiee.</p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-8">
-            <!-- Step 1 -->
-            <div class="space-y-8 p-10 bg-gray-50/50 rounded-[2.5rem]">
-                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">Step 01</span>
-                <div class="space-y-4">
-                    <h3 class="text-3xl font-black text-black tracking-tighter">Record a Video</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed">Use our Tradsiee integration to film the issue. It gives Anthony the context he needs to evaluate the job instantly.</p>
+        <div class="grid lg:grid-cols-12 gap-8 lg:grid-rows-2 h-auto lg:h-[700px]">
+            <!-- Step 1: Big Bento Item -->
+            <div class="lg:col-span-7 lg:row-span-2 group relative overflow-hidden glass-card radius-lg p-16 flex flex-col justify-start space-y-12 hover:border-stone-400 reveal-up" style="animation-delay: 200ms">
+                <img src="/images/Artboard1100.png" alt="Tiling Video" class="absolute -bottom-8 -right-4 w-1/2 h-auto object-contain translate-y-8 translate-x-4 group-hover:scale-105 group-hover:translate-y-2 group-hover:translate-x-0 transition-all duration-1000 opacity-40 group-hover:opacity-80">
+                <div class="space-y-4 relative z-10">
+                    <h3 class="text-5xl font-black tracking-tighter text-black leading-none">Record a <br><span class="font-serif italic font-normal text-stone-500">Tiling Video</span></h3>
+                </div>
+                <div class="space-y-6 max-w-md relative z-10">
+                    <p class="text-xl text-stone-800 font-semibold leading-relaxed">Film the area that needs tiling using the Tradsiee widget. This high-quality video gives Anthony the context he needs to evaluate the layout and surface instantly.</p>
                 </div>
             </div>
-            <!-- Step 2 -->
-            <div class="space-y-8 p-10 bg-gray-50/50 rounded-[2.5rem]">
-                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">Step 02</span>
-                <div class="space-y-4">
-                    <h3 class="text-3xl font-black text-black tracking-tighter">Anthony Reviews</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed">Anthony personally reviews your footage and sends a message back with a precise response. No guesswork required.</p>
+
+            <!-- Step 2: Medium Bento Item -->
+            <div class="lg:col-span-5 lg:row-span-1 group relative overflow-hidden glass-card radius-md p-12 flex flex-col justify-start space-y-8 hover:border-stone-400 reveal-up" style="animation-delay: 400ms">
+                <img src="/images/Artboard2100.png" alt="Instant Alert" class="absolute -bottom-6 -right-6 w-1/2 h-auto object-contain translate-y-4 translate-x-4 group-hover:scale-110 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-1000 opacity-40 group-hover:opacity-100">
+                <div class="space-y-3 relative z-10">
+                    <h3 class="text-4xl font-black tracking-tighter text-black leading-none">Anthony <br><span class="font-serif italic font-normal text-stone-500 text-3xl">Reviews</span></h3>
+                </div>
+                <div class="relative z-10">
+                    <p class="text-lg text-stone-800 font-semibold leading-tight max-w-[240px]">Tradsiee's instant SMS notifications mean Anthony gets back to you faster than ever.</p>
                 </div>
             </div>
-            <!-- Step 3 -->
-            <div class="space-y-8 p-10 bg-gray-50/50 rounded-[2.5rem]">
-                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">Step 03</span>
-                <div class="space-y-4">
-                    <h3 class="text-3xl font-black text-black tracking-tighter">Ready to Work</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed">We arrive with the correct parts and tools, ready to fix the problem correctly on the very first visit.</p>
+
+            <!-- Step 3: Medium Bento Item -->
+            <div class="lg:col-span-5 lg:row-span-1 group relative overflow-hidden glass-card radius-md p-12 flex flex-col justify-start space-y-8 hover:border-stone-400 reveal-up" style="animation-delay: 600ms">
+                <img src="/images/Artboard3100.png" alt="Efficiency" class="absolute -bottom-6 -right-6 w-1/2 h-auto object-contain translate-y-4 translate-x-4 group-hover:scale-110 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-1000 opacity-40 group-hover:opacity-100">
+                <div class="space-y-3 relative z-10">
+                    <h3 class="text-4xl font-black tracking-tighter text-black leading-none">Tiling <br><span class="font-serif italic font-normal text-stone-500 text-3xl">Preparation</span></h3>
+                </div>
+                <div class="relative z-10">
+                    <p class="text-lg text-stone-800 font-semibold leading-tight max-w-[240px]">By seeing the job first, we arrive with the exact tiles, adhesives, and tools required.</p>
                 </div>
             </div>
         </div>
@@ -75,29 +147,31 @@
 </section>
 
 <!-- Services Section -->
-<section id="services" class="py-24 lg:py-32 bg-white border-b border-gray-50">
+<section id="services" class="section-padding bg-white border-y border-stone-200">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-24 gap-8">
-            <h2 class="text-5xl lg:text-8xl font-black text-black tracking-tighter leading-none">Services.</h2>
-            <p class="text-xl text-gray-400 font-medium max-w-sm">A full-suite trade network for every corner of your home or business.</p>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-32 gap-12 reveal-up">
+            <div class="space-y-8">
+                <h2 class="heading-lg">Precision<span class="text-stone-400 font-serif italic font-normal"> Tiling Services.</span></h2>
+                <p class="text-2xl text-stone-600 font-bold max-w-sm leading-tight">Mastered tiling solutions for every corner of your property.</p>
+            </div>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {{ $services := slice 
-                (dict "title" "Flooring" "img" "flooring.jpg" "desc" "Precision installation of tile, timber, and laminate surfaces.")
-                (dict "title" "Repairs" "img" "repairs.jpg" "desc" "Flawless drywall, plastering, and structural maintenance.")
-                (dict "title" "Carpentry" "img" "carpentry.jpg" "desc" "Custom timber work, decking, and bespoke shelving solutions.")
-                (dict "title" "Bathrooms" "img" "bathroom.jpg" "desc" "Complete renovations with full waterproofing certification.")
-                (dict "title" "Commercial" "img" "commercials.jpg" "desc" "Facility maintenance for healthcare, retail, and hospitality.")
-                (dict "title" "Exterior" "img" "exterior.jpg" "desc" "High-end fencing, gutter care, and pool area restoration.")
+                (dict "title" "Wall & Floor Tiling" "img" "flooring.jpg" "desc" "Expert installation of all tile types including ceramic, porcelain, and natural stone. We ensure perfect alignment and long-lasting durability for your floors and walls.")
+                (dict "title" "Bathroom Tiling" "img" "bathroom.jpg" "desc" "Complete bathroom tiling solutions from waterproofing to the final grout line. We specialize in modern walk-in showers and luxury finishes.")
+                (dict "title" "Kitchen Splashbacks" "img" "carpentry.jpg" "desc" "Transform your kitchen with a precision-installed splashback. We handle intricate patterns and a wide variety of materials to match your style.")
+                (dict "title" "Tile Repairs & Grouting" "img" "repairs.jpg" "desc" "Restore your tiled surfaces. From replacing cracked tiles to full regrouting, we make your old surfaces look brand new again.")
+                (dict "title" "Commercial Tiling" "img" "commercials.jpg" "desc" "High-durability tiling for retail, food industry, and healthcare. We deliver professional results that stand up to heavy traffic.")
+                (dict "title" "Outdoor & Pool Tiling" "img" "exterior.jpg" "desc" "Weather-resistant tiling for patios, pool surrounds, and external walls. We use the right materials to ensure safety and longevity outdoors.")
             }}
 
-            {{ range $services }}
-            <div class="relative aspect-video overflow-hidden rounded-[2rem] group border border-gray-50">
-                <img src="/images/{{ .img }}" alt="{{ .title }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8 space-y-2">
-                    <h3 class="text-2xl font-black text-white tracking-tighter">{{ .title }}</h3>
-                    <p class="text-gray-300 font-medium text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">{{ .desc }}</p>
+            {{ range $index, $element := $services }}
+            <div class="group relative aspect-[4/5] overflow-hidden radius-md reveal-up" style="animation-delay: {{ mul $index 100 }}ms">
+                <img src="/images/{{ .img }}" alt="{{ .title }}" class="w-full h-full object-cover group-hover:scale-110 transition-standard">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-10 space-y-4">
+                    <h3 class="text-3xl font-black text-white tracking-tighter leading-none">{{ .title }}</h3>
+                    <p class="text-stone-200 font-bold text-sm leading-relaxed">{{ .desc }}</p>
                 </div>
             </div>
             {{ end }}
@@ -105,29 +179,71 @@
     </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="py-24 lg:py-48 bg-white overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
-        <div class="relative order-2 lg:order-1">
-            <img src="/images/tony.jpg" alt="Anthony" class="relative z-10 rounded-[2.5rem] grayscale hover:grayscale-0 transition-all duration-1000 w-full shadow-2xl">
+<!-- Testimonials Section -->
+<section class="section-padding bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-4 gap-16 lg:gap-12">
+            <div class="space-y-6 reveal-up">
+                <p class="text-[10px] font-black uppercase tracking-[0.4em] text-stone-300">Social Proof</p>
+                <h2 class="text-4xl font-black text-[#1c1917] tracking-tighter leading-none italic font-serif">Trusted by <br>Locals.</h2>
+            </div>
+            <div class="space-y-6 reveal-up" style="animation-delay: 200ms">
+                <p class="text-lg font-bold text-[#1c1917] leading-tight">"Anthony’s attention to detail is unmatched. The video quote saved so much time, and the result was perfect."</p>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">— Sarah, South Yarra</p>
+            </div>
+            <div class="space-y-6 reveal-up" style="animation-delay: 400ms">
+                <p class="text-lg font-bold text-[#1c1917] leading-tight">"Professional, reliable, and incredibly efficient. The easiest trade experience I've had in Melbourne."</p>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">— James, Toorak</p>
+            </div>
+            <div class="space-y-6 reveal-up" style="animation-delay: 600ms">
+                <p class="text-lg font-bold text-[#1c1917] leading-tight">"10/10 service. Best tiler in Melbourne for price and quality. The splashback looks incredible."</p>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">— Linda, Hawthorn</p>
+            </div>
         </div>
-        <div class="space-y-12 order-1 lg:order-2">
-            <h2 class="text-5xl lg:text-7xl font-black tracking-tighter text-black leading-none">The story.</h2>
-            <div class="space-y-10 text-xl text-gray-500 font-medium leading-relaxed">
-                <p>
-                    Founded by Anthony, AskTony is more than just a maintenance service. It's a commitment to <span class="text-black">craftsmanship and technical innovation.</span>
-                </p>
-                <p>
-                    With 14 years of trade experience spanning from Italy to Melbourne, Anthony has built a network defined by precision. By integrating tools like <span class="text-black italic">Tradsiee</span>, we've removed the friction from the repair process.
-                </p>
-                
-                <div class="p-8 bg-gray-50 rounded-[2rem] border-l-4 border-black space-y-4">
-                    <p class="text-black font-black italic text-2xl tracking-tighter leading-tight">
-                        "Precision isn't just a goal—it's the only way we work."
-                    </p>
-                    <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest leading-relaxed">
-                        None of this would be possible without <span class="text-black">Corey, Joe, James and Freddy.</span>
-                    </p>
+    </div>
+</section>
+
+<!-- Coverage & FAQ Section -->
+<section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-24 items-start">
+            <!-- Left: Suburbs (Local SEO) -->
+            <div class="space-y-12 reveal-up">
+                <div class="space-y-4">
+                    <p class="text-[10px] font-black uppercase tracking-[0.4em] text-stone-300">Coverage</p>
+                    <h2 class="text-4xl font-black text-[#1c1917] tracking-tighter leading-none italic font-serif">Melbourne <br>Wide.</h2>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    {{ $suburbs := slice "South Yarra" "Toorak" "Brighton" "Richmond" "Prahran" "Camberwell" "St Kilda" "Hawthorn" }}
+                    {{ range $suburbs }}
+                    <div class="flex items-center space-x-3">
+                        <span class="w-1.5 h-1.5 bg-stone-200 rounded-full"></span>
+                        <span class="text-sm font-bold text-stone-600">{{ . }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-stone-300">And surrounding areas.</p>
+            </div>
+
+            <!-- Right: Quick FAQ -->
+            <div class="space-y-12 reveal-up" style="animation-delay: 200ms">
+                <div class="space-y-4">
+                    <p class="text-[10px] font-black uppercase tracking-[0.4em] text-stone-300">Quick Prep</p>
+                    <h2 class="text-4xl font-black text-[#1c1917] tracking-tighter leading-none italic font-serif">Frequently <br>Asked.</h2>
+                </div>
+                <div class="space-y-10">
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-[#1c1917] uppercase tracking-tight">How soon can you start?</p>
+                        <p class="text-sm text-stone-500 font-medium">Availability varies, but sending a Tradsiee video usually cuts the lead time by 3-5 days.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-[#1c1917] uppercase tracking-tight">Do you provide tiles?</p>
+                        <p class="text-sm text-stone-500 font-medium">We specialize in installation. We can recommend top suppliers or work with tiles you've already purchased.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-sm font-black text-[#1c1917] uppercase tracking-tight">Are you certified?</p>
+                        <p class="text-sm text-stone-500 font-medium">Yes. Fully licensed in Wall & Floor Tiling and certified in high-standard waterproofing.</p>
+                    </div>
                 </div>
             </div>
         </div>

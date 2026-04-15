@@ -1,28 +1,50 @@
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-gray-100/50">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<nav id="main-nav" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-7xl transition-transform duration-500 ease-in-out">
+    <div class="glass-navbar rounded-full px-8 py-3 flex items-center justify-between shadow-lg">
         <!-- Logo -->
         <a href="/" class="flex items-center space-x-2 group">
-            <img src="/images/logo.png" alt="AskTony" class="h-6 w-auto grayscale contrast-125">
-            <span class="text-lg font-black tracking-tighter text-black uppercase">AskTony.</span>
+            <img src="/images/logo.png" alt="AskTony" class="h-6 w-auto grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
+            <span class="text-lg font-black tracking-tighter text-[#1c1917] uppercase">AskTony.</span>
         </a>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-10">
-            <a href="#how-it-works" class="text-[11px] font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest">Process</a>
-            <a href="#services" class="text-[11px] font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest">Services</a>
-            <a href="#about" class="text-[11px] font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest">Story</a>
-            <a href="https://tradsiee.com" class="px-5 py-2 bg-black text-white text-[11px] font-bold rounded-full hover:bg-gray-800 transition-all shadow-xl shadow-gray-200 uppercase tracking-widest">
-                Message Anthony
+            <a href="#how-it-works" class="text-[11px] font-bold text-stone-400 hover:text-[#1c1917] transition-colors uppercase tracking-[0.2em]">Process</a>
+            <a href="#services" class="text-[11px] font-bold text-stone-400 hover:text-[#1c1917] transition-colors uppercase tracking-[0.2em]">Services</a>
+            <a href="#about" class="text-[11px] font-bold text-stone-400 hover:text-[#1c1917] transition-colors uppercase tracking-[0.2em]">Story</a>
+            <div class="h-4 w-[1px] bg-stone-200"></div>
+            <a href="https://tradsiee.com" class="btn-primary">
+                Record Video
             </a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
+        <!-- Mobile Menu Toggle (Minimal) -->
         <div class="md:hidden">
-            <a href="https://tradsiee.com" class="px-4 py-1.5 bg-black text-white text-[10px] font-bold rounded-full uppercase tracking-widest">
-                Message
+            <a href="https://tradsiee.com" class="btn-primary px-5 py-2 !text-[10px]">
+                Record Video
             </a>
         </div>
     </div>
 </nav>
-<!-- Spacer -->
-<div class="h-16"></div>
+
+<script>
+    let lastScrollTop = 0;
+    const nav = document.getElementById('main-nav');
+    const scrollThreshold = 50; // Minimum scroll before hiding
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Don't do anything for very small scrolls
+        if (Math.abs(lastScrollTop - scrollTop) <= 5) return;
+
+        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            // Scrolling down - hide navbar
+            nav.style.transform = 'translate(-50%, -150%)';
+        } else {
+            // Scrolling up - show navbar
+            nav.style.transform = 'translate(-50%, 0)';
+        }
+        
+        lastScrollTop = scrollTop;
+    }, { passive: true });
+</script>
