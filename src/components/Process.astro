@@ -1,0 +1,27 @@
+---
+const steps = [
+    { title: "Initial Consultation", desc: "We discuss your vision, requirements, and provide expert advice on the best tiling solutions for your space." },
+    { title: "Precision Planning", desc: "Detailed measurement and surface preparation to ensure a flawless and long-lasting installation." },
+    { title: "Master Installation", desc: "Expert application with meticulous attention to detail, from spacing to perfect mitred edges." }
+];
+---
+<section id="how-it-works" class="section-padding">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-24 space-y-8 reveal-up">
+            <h2 class="heading-lg">Our Seamless <br>Tiling Process.</h2>
+            <p class="text-xl text-slate-500 font-medium leading-relaxed">We combine traditional craftsmanship with modern techniques to deliver a professional result every time.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {steps.map((step, index) => (
+                <div class="glass-card p-10 lg:p-14 space-y-10 reveal-up" style={`animation-delay: ${index * 200}ms`}>
+                    <span class="text-6xl font-black text-slate-200/50 block">{String(index + 1).padStart(2, '0')}</span>
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold tracking-tight text-brand-dark">{step.title}</h3>
+                        <p class="text-slate-500 leading-relaxed text-sm">{step.desc}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
