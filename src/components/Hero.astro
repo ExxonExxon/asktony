@@ -1,32 +1,34 @@
 ---
 ---
-<section class="relative min-h-[90vh] lg:h-screen w-full flex items-center justify-center overflow-hidden">
-    <!-- Background Image with center positioning -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Full-width background image -->
     <div class="absolute inset-0 z-0">
-        <img src="/images/header.jpg" alt="Ask Tony Header" class="w-full h-full object-cover object-center scale-105">
-        <!-- Modern gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-darker/70 via-brand-darker/50 to-brand-darker/80"></div>
+        <img src="https://placehold.co/1920x1080?text=Hero+Background+Image" alt="Hero Placeholder" class="w-full h-full object-cover">
+        <!-- Overlay for readability -->
+        <div class="absolute inset-0 bg-white/60"></div>
     </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-12 reveal-up">
-        <div class="space-y-6">
-            <h1 class="heading-xl drop-shadow-2xl uppercase">
-                ASK TONY.<br>
-                <span class="text-brand-accent">EXPERT TILING.</span>
-            </h1>
-        </div>
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-20 w-full relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-12 space-y-12 relative">
+                <div class="space-y-4 reveal-up">
+                    <span class="text-[10px] font-bold text-brand-accent uppercase tracking-[0.5em] block">Hero Section</span>
+                    <h1 class="heading-xl">
+                        LOREM <br>
+                        <span class="text-brand-accent italic font-light">IPSUM.</span>
+                    </h1>
+                </div>
 
-        <p class="text-lg lg:text-2xl text-slate-200 max-w-3xl mx-auto leading-relaxed font-medium opacity-90">
-            Professional wall and floor tiling services in Melbourne. Expert craftsmanship, premium materials, and a finish that lasts a lifetime.
-        </p>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
-            <a href="#" class="btn-primary w-full sm:w-auto">
-                Get a Quote
-            </a>
-            <a href="#services" class="px-10 py-5 border border-white/20 text-white text-[12px] font-bold rounded-2xl hover:bg-white/10 transition-standard uppercase tracking-[0.1em] backdrop-blur-md w-full sm:w-auto">
-                Our Services
-            </a>
+                <div class="max-w-xl space-y-10 reveal-up" style="animation-delay: 200ms">
+                    <p class="text-readable">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                    <div class="flex items-center gap-8">
+                        <a href="#" class="btn-primary">Lorem Ipsum</a>
+                        <a href="#" class="text-[10px] font-bold text-brand-dark hover:text-brand-accent transition-colors uppercase tracking-[0.2em] border-b border-brand-dark/20 pb-1">Lorem Ipsum</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

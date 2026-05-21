@@ -7,8 +7,8 @@ interface Props {
 }
 
 const { 
-	title = "Ask Tony | Expert Wall & Floor Tiler Melbourne",
-	description = "Professional wall and floor tiling services in Melbourne. Expert craftsmanship, premium materials, and a finish that lasts a lifetime."
+	title = "Lorem Ipsum | Dolor Sit Amet",
+	description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 } = Astro.props;
 ---
 
@@ -36,7 +36,7 @@ const {
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL('/images/logo.png', Astro.url)} />
 	</head>
-	<body class="selection:bg-[#1c1917] selection:text-white overflow-x-hidden">
+	<body class="selection:bg-brand-accent selection:text-white overflow-x-hidden">
 		<slot />
 	</body>
 </html>

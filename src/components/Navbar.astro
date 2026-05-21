@@ -1,32 +1,31 @@
 ---
 ---
 <nav id="main-nav" class="fixed top-0 left-0 w-full z-[100] transition-standard duration-700">
-    <div class="glass-navbar px-6 lg:px-12 py-5 lg:py-6 flex items-center justify-between">
+    <div class="glass-navbar px-6 lg:px-20 py-4 lg:py-6 flex items-center justify-between">
         <!-- Logo -->
-        <a href="/" class="flex items-center space-x-4 group">
-            <div class="relative">
-                <div class="absolute inset-0 bg-brand-accent/20 rounded-xl blur-lg scale-0 group-hover:scale-150 transition-standard duration-700"></div>
-                <img src="/images/logo.png" alt="Ask Tony" class="h-12 w-auto relative z-10 transition-standard group-hover:scale-110">
-            </div>
-            <span class="text-xl font-black tracking-tight text-brand-dark uppercase">Ask <span class="text-brand-accent">Tony.</span></span>
+        <a href="/" class="flex items-center space-x-3 group">
+            <span class="text-xl lg:text-2xl font-bold tracking-tighter text-brand-dark uppercase">Lorem <span class="text-brand-accent">Ipsum.</span></span>
         </a>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-12">
-            <a href="#how-it-works" class="text-[12px] font-bold text-slate-500 hover:text-brand-accent transition-colors uppercase tracking-[0.1em]">How it Works</a>
-            <a href="#services" class="text-[12px] font-bold text-slate-500 hover:text-brand-accent transition-colors uppercase tracking-[0.1em]">Services</a>
-            <a href="#portfolio" class="text-[12px] font-bold text-slate-500 hover:text-brand-accent transition-colors uppercase tracking-[0.1em]">Portfolio</a>
-            <a href="#about" class="text-[12px] font-bold text-slate-500 hover:text-brand-accent transition-colors uppercase tracking-[0.1em]">About</a>
-            <a href="#" class="btn-primary !py-3.5 !px-8 !text-[11px]">
-                Book Tony
+        <div class="hidden md:flex items-center space-x-10">
+            {[
+                { label: 'Portfolio', href: '#portfolio' },
+                { label: 'About', href: '#about' },
+                { label: 'Process', href: '#how-it-works' }
+            ].map((item) => (
+                <a href={item.href} class="text-[10px] font-bold text-brand-muted hover:text-brand-dark transition-colors uppercase tracking-[0.2em]">{item.label}</a>
+            ))}
+            <a href="#contact" class="btn-primary !py-3 !px-8">
+                Get a Quote
             </a>
         </div>
 
         <!-- Mobile Button -->
         <div class="md:hidden">
-            <a href="#" class="btn-primary !px-6 !py-3 !text-[10px]">
-                Book Tony
-            </a>
+            <button class="text-brand-dark">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
     </div>
 </nav>
@@ -34,14 +33,18 @@
 <script>
     let lastScrollTop = 0;
     const nav = document.getElementById('main-nav');
-    const scrollThreshold = 100;
+    const scrollThreshold = 50;
 
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (Math.abs(lastScrollTop - scrollTop) <= 15) return;
+        if (scrollTop > scrollThreshold) {
+            nav?.classList.add('py-2');
+        } else {
+            nav?.classList.remove('py-2');
+        }
 
-        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+        if (scrollTop > lastScrollTop && scrollTop > 200) {
             if (nav) nav.style.transform = 'translateY(-100%)';
         } else {
             if (nav) nav.style.transform = 'translateY(0)';

@@ -4,16 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand': {
-          'dark': '#0f172a',      // slate-900
-          'darker': '#020617',    // slate-950
-          'accent': '#c5a059',    // soft gold/brass
-          'accent-light': '#d4b982',
-          'stone': '#f8fafc',     // slate-50
-        }
+        'brand-dark': '#1A1A1A',
+        'brand-accent': '#C5A059',
+        'brand-accent-light': '#D4B982',
+        'brand-surface': '#F5F5F0',
+        'brand-muted': '#71717A',
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
+        'heading': ['Ubuntu', 'sans-serif'],
       },
       borderRadius: {
         'xl': '1rem',

@@ -1,20 +1,22 @@
 ---
 ---
-<section class="section-padding relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-slate-200/10 -z-10 select-none">TONY</div>
-    
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
+<section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-20">
+        <div class="max-w-3xl mb-24 space-y-8 reveal-up">
+            <span class="text-[10px] font-bold text-brand-accent uppercase tracking-[0.5em] block">Testimonials Section</span>
+            <h2 class="heading-lg">Lorem Ipsum <br>Dolor Sit Amet.</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-12">
             {[1, 2, 3].map((_, index) => (
-                <div class="glass-card p-10 lg:p-12 space-y-8 reveal-up" style={`animation-delay: ${index * 200}ms`}>
+                <div class="space-y-8 reveal-up" style={`animation-delay: ${index * 200}ms`}>
                     <div class="flex space-x-1 text-brand-accent">
-                        {[1, 2, 3, 4, 5].map(() => <i class="fas fa-star text-[12px]"></i>)}
+                        {[1, 2, 3, 4, 5].map(() => <i class="fas fa-star text-[10px]"></i>)}
                     </div>
-                    <p class="text-lg font-medium text-slate-700 leading-relaxed italic">"Ask Tony did an amazing job on our bathroom renovation. The attention to detail and professional service were second to none."</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="/images/logo.png" alt="Ask Tony" class="w-12 h-12 object-contain opacity-80" />
+                    <p class="text-lg font-medium text-brand-dark leading-relaxed italic">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-black/5">
                         <div>
-                            <p class="text-sm font-bold text-brand-dark uppercase tracking-wider">Happy Client</p>
+                            <p class="text-[10px] font-bold text-brand-dark uppercase tracking-widest">Lorem Ipsum</p>
                         </div>
                     </div>
                 </div>
