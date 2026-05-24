@@ -1,12 +1,12 @@
 # Ask Tony | Expert Wall & Floor Tiler
 
-Professional static website for **Ask Tony**, a Melbourne-based tiling service. Built with Hugo, Tailwind CSS, and optimized for performance and conversion.
+Professional static website for **Ask Tony**, a Melbourne-based tiling service. Built with **Astro (v5)**, Tailwind CSS, and optimized for performance.
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- **Hugo (Extended version)**: Minimum version 0.116.0. Required for SCSS and PostCSS processing.
-- **Node.js & npm**: For managing Tailwind CSS and PostCSS dependencies.
+- **Node.js**: LTS version recommended.
+- **npm** or **yarn**: For managing dependencies.
 
 ### Installation
 1. Clone the repository.
@@ -18,47 +18,46 @@ Professional static website for **Ask Tony**, a Melbourne-based tiling service. 
 ### Development
 Run the local development server:
 ```bash
-hugo server
+npm run dev
 ```
-The site will be available at `http://localhost:1313`.
+The site will be available at `http://localhost:4321`.
 
 ### Production Build
-Generate the static site in the `public/` directory:
+Generate the static site in the `dist/` directory:
 ```bash
-hugo
+npm run build
 ```
 
 ## 🛠 Tech Stack
-- **Static Site Generator:** [Hugo](https://gohugo.io/)
-- **Styling:** [Tailwind CSS (v3)](https://tailwindcss.com/), PostCSS, and SCSS
-- **Asset Pipeline:** Hugo Pipes
-- **Integrations:** Tradiee (video-based quotes)
+- **Framework:** [Astro (v5)](https://astro.build/)
+- **Styling:** [Tailwind CSS (v3)](https://tailwindcss.com/), Sass/SCSS
+- **Deployment:** Static Site Generation (SSG)
 
 ## 📁 Project Structure
-- `themes/asktony/`: Core theme logic and assets.
-  - `assets/css/`: SCSS source, Tailwind, and PostCSS configurations.
-  - `layouts/`: HTML templates (partials, shortcodes, and base templates).
-  - `static/`: Static assets (images, fonts).
-- `content/`: Markdown files for site content.
-- `hugo.toml`: Primary configuration file.
+- `src/`: Core application source.
+  - `components/`: Modular UI sections (Hero, About, Portfolio, etc.).
+  - `layouts/`: Base HTML templates (e.g., `Layout.astro`).
+  - `pages/`: Site routes (e.g., `index.astro`).
+  - `styles/`: Global styles and design tokens (`global.scss`).
+- `public/`: Static assets such as images, fonts, and favicon.
+- `astro.config.mjs`: Astro configuration.
+- `tailwind.config.mjs`: Tailwind CSS configuration.
 
 ## 🎨 Development Conventions
 
 ### Styling
-- **Source:** `themes/asktony/assets/css/styles.scss`
-- **Design Tokens:** Custom tokens like `.radius-lg`, `.shadow-soft`, and `.heading-xl` are defined in the `@layer components` section.
-- **Tailwind:** Utility classes are used directly in layouts. Configuration is at `themes/asktony/assets/css/tailwind.config.js`.
+- Global styles and design tokens are defined in `src/styles/global.scss`.
+- Custom design tokens (e.g., `.radius-lg`, `.shadow-soft`, `.heading-xl`) are available as utility classes.
+- Tailwind utility classes are used directly within Astro components.
 
-### Layouts
-- **Base:** `themes/asktony/layouts/_default/baseof.html`
-- **Homepage:** `themes/asktony/layouts/index.html`
-- **Partials:** Found in `themes/asktony/layouts/partials/` (navbar, footer, head, etc.).
+### Layouts and Components
+- **Base Layout:** `src/layouts/Layout.astro` handles SEO, meta tags, and global style imports.
+- **Components:** Sections of the site are broken into modular `.astro` files in `src/components/` for easier maintenance.
 
 ### Assets
-- Images are located in `themes/asktony/static/images/`.
-- Reference images in templates using absolute paths (e.g., `/images/tony.jpg`).
+- All images are stored in `public/images/`.
+- Images are referenced in templates using absolute paths (e.g., `/images/logo.png`).
 
 ## 📝 TODOs
-- [ ] Expand `content/` with service-specific pages or blog posts.
-- [ ] Verify local font references in `static/fonts/`.
-- [ ] Optimize images for production.
+- [ ] Implement Astro's `<Image />` component for advanced optimization.
+- [ ] Add dynamic content loading from Markdown or a CMS if needed.
