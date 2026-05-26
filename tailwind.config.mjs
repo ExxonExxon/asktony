@@ -4,11 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-dark': '#1A1A1A',
-        'brand-accent': '#C5A059',
-        'brand-accent-light': '#D4B982',
-        'brand-surface': '#F5F5F0',
-        'brand-muted': '#71717A',
+        'brand-base':      '#08080c',
+        'brand-dark':      '#0e0e14',
+        'brand-surface':   '#15151d',
+        'brand-elevated':  '#1c1c26',
+        'brand-border':    '#252530',
+        'brand-accent':    '#6366f1',
+        'brand-accent-bright': '#818cf8',
+        'brand-accent-subtle':  '#3730a3',
+        'brand-muted':     '#a1a1aa',
+        'brand-dim':       '#888888',
+        'brand-success':   '#22c55e',
+        'brand-warning':   '#f59e0b',
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
@@ -17,7 +24,7 @@ export default {
       borderRadius: {
         'xl': '1rem',
         '2xl': '1.5rem',
-      }
+      },
     },
   },
   plugins: [],

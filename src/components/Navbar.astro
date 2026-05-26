@@ -1,127 +1,109 @@
 ---
+const sections = [
+    { label: 'About', href: '/#about', icon: 'fa-user' },
+    { label: 'Portfolio', href: '/#portfolio', icon: 'fa-th' },
+    { label: 'Process', href: '/#how-it-works', icon: 'fa-clipboard-list' },
+    { label: 'FAQ', href: '/#faq', icon: 'fa-question' },
+];
 ---
-<nav id="main-nav" class="fixed top-0 left-0 w-full z-[100] transition-all duration-500">
-    <div id="nav-container" class="px-6 lg:px-20 py-6 lg:py-8 flex items-center justify-between transition-all duration-500">
-        <!-- Logo -->
-        <a href="/" class="flex items-center space-x-3 group relative z-[110]">
-            <span class="text-xl lg:text-2xl font-bold tracking-tighter text-brand-dark uppercase">Lorem <span class="text-brand-accent">Ipsum.</span></span>
+
+<!-- Vertical Pill Navigation -->
+<nav id="main-nav" class="fixed left-4 md:left-6 xl:left-8 top-1/2 -translate-y-1/2 z-50 hidden md:block">
+    <div class="pill relative flex flex-col items-center gap-6 py-6 px-3.5 bg-brand-elevated/95 backdrop-blur-xl rounded-full border border-white/[0.12] shadow-heavy">
+
+        <!-- Brand mark -->
+        <a href="/" class="brand-mark group relative flex items-center w-9 h-9 justify-center rounded-lg" aria-label="Home">
+            <svg class="w-5 h-5 text-brand-accent" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+                <polygon points="8,0 16,8 8,16 0,8" />
+                <polygon points="8,3 13,8 8,13 3,8" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-white bg-brand-surface rounded-full opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap border border-white/[0.08] shadow-sm">
+                Lorem Ipsum
+            </span>
         </a>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-10">
-            {[
-                { label: 'Portfolio', href: '/#portfolio' },
-                { label: 'About', href: '/#about' },
-                { label: 'Process', href: '/#how-it-works' }
-            ].map((item) => (
-                <a href={item.href} class="nav-link text-sm font-bold text-brand-muted hover:text-brand-dark transition-colors uppercase tracking-wider relative py-2 overflow-hidden group">
-                    <span class="relative z-10">{item.label}</span>
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent transform translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300"></span>
-                </a>
-            ))}
-            <a href="/contact" class="btn-primary !py-3 !px-8">
-                Contact Tony
+        <div class="nav-divider w-7 h-px bg-white/[0.12]"></div>
+
+        {sections.map((section) => (
+            <a
+                href={section.href}
+                class="nav-dot group relative flex items-center w-9 h-9 justify-center rounded-lg"
+                data-section={section.href.replace('/#', '')}
+                aria-label={section.label}
+            >
+                <i class={`fas ${section.icon} text-sm text-white/60 transition-all duration-300 group-hover:text-brand-accent`}></i>
+                <span class="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-white bg-brand-surface rounded-full opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap border border-white/[0.08] shadow-sm">
+                    {section.label}
+                </span>
             </a>
-        </div>
-
-        <!-- Mobile Button -->
-        <div class="md:hidden relative z-[110]">
-            <button id="mobile-menu-button" class="text-brand-dark focus:outline-none p-2" aria-label="Toggle Menu">
-                <div class="w-6 h-5 relative flex flex-col justify-between">
-                    <span id="hamburger-top" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
-                    <span id="hamburger-middle" class="w-full h-0.5 bg-current transition-all duration-300"></span>
-                    <span id="hamburger-bottom" class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
-                </div>
-            </button>
-        </div>
-    </div>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500 translate-y-10">
-        {[
-            { label: 'Services', href: '/#services' },
-            { label: 'Portfolio', href: '/#portfolio' },
-            { label: 'About', href: '/#about' },
-            { label: 'Process', href: '/#how-it-works' },
-            { label: 'FAQ', href: '/#faq' },
-            { label: 'Contact Us', href: '/contact' }
-        ].map((item) => (
-            <a href={item.href} class="mobile-nav-link text-2xl font-bold text-brand-dark uppercase tracking-widest">{item.label}</a>
         ))}
+
+        <div class="nav-divider w-7 h-px bg-white/[0.12]"></div>
+
+        <a
+            href="/contact"
+            class="nav-contact group relative flex items-center w-9 h-9 justify-center rounded-lg"
+            aria-label="Contact"
+        >
+            <i class="fas fa-phone text-sm text-brand-accent transition-all duration-300 group-hover:scale-110"></i>
+            <span class="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-white bg-brand-accent-subtle rounded-full opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap shadow-sm">
+                Contact
+            </span>
+        </a>
     </div>
 </nav>
 
+<!-- Mobile Menu Button -->
+<div class="md:hidden fixed top-5 right-5 z-50">
+    <button id="mobile-menu-button" class="w-10 h-10 rounded-full bg-brand-elevated/85 backdrop-blur-xl border border-white/[0.12] shadow-heavy flex items-center justify-center text-white focus:outline-none" aria-label="Toggle Menu">
+        <div class="w-4 h-3 relative flex flex-col justify-between">
+            <span id="hamburger-top" class="w-full h-0.5 bg-current block transition-all duration-300 origin-left"></span>
+            <span id="hamburger-middle" class="w-full h-0.5 bg-current block transition-all duration-300"></span>
+            <span id="hamburger-bottom" class="w-full h-0.5 bg-current block transition-all duration-300 origin-left"></span>
+        </div>
+    </button>
+</div>
+
+<!-- Mobile Logo -->
+<a href="/" class="md:hidden fixed top-5 left-5 z-50">
+    <span class="text-base font-bold tracking-tighter text-white uppercase">Lorem <span class="text-brand-accent">Ipsum.</span></span>
+</a>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-brand-base z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500 translate-y-10">
+    {[...sections, { label: 'Contact Us', href: '/contact' }].map((item) => (
+        <a href={item.href} class="mobile-nav-link text-2xl font-bold text-white uppercase tracking-wider hover:text-brand-accent transition-colors">{item.label}</a>
+    ))}
+</div>
+
 <script>
-    let lastScrollTop = 0;
-    const nav = document.getElementById('main-nav');
-    const navContainer = document.getElementById('nav-container');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburgerTop = document.getElementById('hamburger-top');
     const hamburgerMiddle = document.getElementById('hamburger-middle');
     const hamburgerBottom = document.getElementById('hamburger-bottom');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    
+
     let isMenuOpen = false;
 
-    // Scroll Logic
-    const scrollThreshold = 20;
-
-    window.addEventListener('scroll', function() {
-        if (isMenuOpen) return;
-
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > scrollThreshold) {
-            navContainer?.classList.add('glass-navbar', '!py-4');
-            navContainer?.classList.remove('lg:py-8', 'py-6');
-        } else {
-            navContainer?.classList.remove('glass-navbar', '!py-4');
-            navContainer?.classList.add('lg:py-8', 'py-6');
-        }
-
-        // Hide navbar when scrolling down, show when scrolling up
-        // Only hide if we have scrolled past a certain point (e.g., 100px)
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            if (nav) nav.style.transform = 'translateY(-100%)';
-        } else {
-            if (nav) nav.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollTop = scrollTop;
-    }, { passive: true });
-
-    // Show navbar when mouse is near the top
-    window.addEventListener('mousemove', (e) => {
-        if (isMenuOpen) return;
-        
-        // If mouse is within 80px of the top of the viewport
-        if (e.clientY < 80) {
-            if (nav) nav.style.transform = 'translateY(0)';
-        }
-    });
-
-    // Mobile Menu Logic
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
-        
+
         if (isMenuOpen) {
             mobileMenu?.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
             mobileMenu?.classList.add('opacity-100', 'translate-y-0');
             document.body.style.overflow = 'hidden';
-            
-            // Hamburger Animation
+
             hamburgerTop?.classList.add('rotate-[42deg]', 'translate-x-[2px]');
-            hamburgerMiddle?.classList.add('opacity-0', 'translate-x-[-10px]');
+            hamburgerMiddle?.classList.add('opacity-0', '-translate-x-2');
             hamburgerBottom?.classList.add('-rotate-[42deg]', 'translate-x-[2px]');
         } else {
             mobileMenu?.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
             mobileMenu?.classList.remove('opacity-100', 'translate-y-0');
             document.body.style.overflow = '';
-            
-            // Hamburger Animation
+
             hamburgerTop?.classList.remove('rotate-[42deg]', 'translate-x-[2px]');
-            hamburgerMiddle?.classList.remove('opacity-0', 'translate-x-[-10px]');
+            hamburgerMiddle?.classList.remove('opacity-0', '-translate-x-2');
             hamburgerBottom?.classList.remove('-rotate-[42deg]', 'translate-x-[2px]');
         }
     }
@@ -134,27 +116,81 @@
         });
     });
 
-    // Active Link Highlighting
+    // Active icon highlighting
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navDots = document.querySelectorAll('.nav-dot');
 
-    function highlightNav() {
-        let scrollY = window.pageYOffset;
-        
-        sections.forEach(current => {
-            const sectionHeight = (current as HTMLElement).offsetHeight;
-            const sectionTop = (current as HTMLElement).offsetTop - 100;
-            const sectionId = current.getAttribute('id');
-            
+    function highlightIcon() {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 60;
+            const sectionId = section.getAttribute('id');
+
+            const dot = document.querySelector(`.nav-dot[data-section="${sectionId}"]`);
+            const icon = dot?.querySelector('i');
+
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelector(`.nav-link[href*=${sectionId}]`)?.classList.add('text-brand-accent');
-                document.querySelector(`.nav-link[href*=${sectionId}]`)?.classList.remove('text-brand-muted');
+                icon?.classList.remove('text-white/60');
+                dot?.classList.add('active-icon');
             } else {
-                document.querySelector(`.nav-link[href*=${sectionId}]`)?.classList.remove('text-brand-accent');
-                document.querySelector(`.nav-link[href*=${sectionId}]`)?.classList.add('text-brand-muted');
+                icon?.classList.add('text-white/60');
+                dot?.classList.remove('active-icon');
             }
         });
     }
 
-    window.addEventListener('scroll', highlightNav);
+    window.addEventListener('scroll', highlightIcon, { passive: true });
+    highlightIcon();
 </script>
+
+<style>
+    .pill::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        background-image: radial-gradient(rgba(255,255,255,0.04) 0.7px, transparent 0.7px);
+        background-size: 4px 4px;
+        z-index: 0;
+    }
+
+    .pill::after {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        pointer-events: none;
+        background: linear-gradient(135deg, rgba(99,102,241,0.08), transparent 40%);
+        z-index: 0;
+    }
+
+    .pill > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav-dot.active-icon {
+        border: 1px solid rgba(99,102,241,0.25);
+        border-radius: 0.5rem;
+        background: rgba(99,102,241,0.15);
+    }
+
+    .nav-dot.active-icon i {
+        color: #818cf8 !important;
+    }
+
+    .nav-dot:active i,
+    .nav-contact:active i,
+    .brand-mark:active svg {
+        animation: click-pop 0.3s ease-out;
+    }
+
+    @keyframes click-pop {
+        0%   { transform: scale(1); }
+        50%  { transform: scale(0.85); }
+        100% { transform: scale(1); }
+    }
+</style>

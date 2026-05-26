@@ -30,49 +30,42 @@
 
 @layer base {
   body {
-    background-color: theme('colors.white');
-    color: theme('colors.brand-dark');
-    @apply font-sans antialiased tracking-tight overflow-x-hidden;
+    @apply bg-brand-base text-white font-sans antialiased tracking-tight overflow-x-hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading text-white;
   }
 }
 
 @layer components {
-  /* Design Tokens */
   .radius-sm { @apply rounded-lg; }
   .radius-md { @apply rounded-xl; }
   .radius-lg { @apply rounded-2xl; }
-  
-  .shadow-soft { 
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+
+  .shadow-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   }
-  
-  .shadow-heavy { 
-    box-shadow: 0 10px 40px -4px rgba(0, 0, 0, 0.08);
+
+  .shadow-heavy {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   }
-  
-  .transition-standard { 
+
+  .transition-standard {
     @apply transition-all duration-500;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .glass-navbar {
-    background-color: rgba(255, 255, 255, 0.7);
-    @apply backdrop-blur-xl border-b border-black/5 shadow-sm transition-standard;
-  }
-  
   .glass-card {
-    @apply bg-white border border-black/5 shadow-soft transition-standard hover:shadow-heavy hover:-translate-y-1;
+    @apply bg-brand-surface border border-white/[0.06] shadow-soft transition-standard hover:shadow-heavy hover:-translate-y-1 rounded-2xl;
   }
 
   .btn-primary {
-    @apply px-10 py-5 bg-brand-dark text-white text-[11px] font-bold rounded-full hover:bg-brand-accent transition-standard uppercase tracking-[0.2em] inline-block text-center relative overflow-hidden;
+    @apply px-10 py-5 text-white text-xs font-bold rounded-full transition-standard uppercase tracking-[0.15em] inline-block text-center relative overflow-hidden bg-brand-accent;
     &::after {
       content: '';
-      @apply absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300;
+      @apply absolute inset-0 translate-y-full transition-transform duration-300;
+      background-color: rgba(255, 255, 255, 0.15);
     }
     &:hover::after {
       @apply translate-y-0;
@@ -80,7 +73,13 @@
   }
 
   .btn-secondary {
-    @apply px-10 py-5 border border-brand-dark text-brand-dark text-[11px] font-bold rounded-full hover:bg-brand-dark hover:text-white transition-standard uppercase tracking-[0.2em] inline-block text-center;
+    @apply px-10 py-5 text-xs font-bold rounded-full transition-standard uppercase tracking-[0.15em] inline-block text-center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
   }
 
   .section-padding {
@@ -88,20 +87,19 @@
   }
 
   .heading-xl {
-    @apply text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.9] text-brand-dark;
+    @apply text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.9] text-white;
   }
 
   .heading-lg {
-    @apply text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-brand-dark;
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white;
   }
-  
+
   .heading-md {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-brand-dark;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white;
   }
 
   .text-readable {
-    color: theme('colors.brand-muted');
-    @apply font-normal leading-relaxed text-base lg:text-xl;
+    @apply font-normal leading-relaxed text-base lg:text-lg text-brand-muted;
   }
 }
 
@@ -112,28 +110,27 @@
 
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 ::selection {
-  background-color: theme('colors.brand-accent');
-  @apply text-white;
+  @apply bg-brand-accent text-white;
 }
 
-::-webkit-scrollbar { 
-  width: 12px; 
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-::-webkit-scrollbar-track { 
-  background-color: #f1f1f1; 
+::-webkit-scrollbar-track {
+  background-color: #08080c;
 }
 
-::-webkit-scrollbar-thumb { 
-  background-color: #888;
-  border: 3px solid #f1f1f1;
+::-webkit-scrollbar-thumb {
+  background-color: #252530;
+  border: 3px solid #08080c;
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover { 
-  background-color: #555; 
+::-webkit-scrollbar-thumb:hover {
+  background-color: #52525b;
 }

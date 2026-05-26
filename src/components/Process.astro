@@ -5,10 +5,10 @@ const steps = [
     { title: "Lorem Ipsum", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }
 ];
 ---
-<section id="how-it-works" class="section-padding bg-brand-surface">
+<section id="how-it-works" class="section-padding bg-brand-dark">
     <div class="max-w-7xl mx-auto px-6 lg:px-20">
         <div class="max-w-3xl mb-24 space-y-8 reveal-up">
-            <span class="text-[10px] font-bold text-brand-accent uppercase tracking-[0.5em] mb-4 block">Process Section</span>
+            <span class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em] mb-4 block">Process Section</span>
             <h2 class="heading-lg">Lorem Ipsum <br>Dolor Sit Amet.</h2>
             <p class="text-readable">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
@@ -17,12 +17,12 @@ const steps = [
             {steps.map((step, index) => (
                 <div class="space-y-8 reveal-up" style={`animation-delay: ${index * 200}ms`}>
                     <div class="flex items-center space-x-4">
-                        <span class="text-3xl font-bold text-brand-dark/10">{String(index + 1).padStart(2, '0')}</span>
-                        <div class="h-px flex-1 bg-black/5"></div>
+                        <span class="text-3xl font-bold text-white/[0.15]">{String(index + 1).padStart(2, '0')}</span>
+                        <div class="h-px flex-1 bg-brand-border"></div>
                     </div>
                     <div class="space-y-4">
-                        <h3 class="text-xl font-bold text-brand-dark uppercase tracking-tight">{step.title}</h3>
-                        <p class="text-sm text-brand-muted leading-relaxed">{step.desc}</p>
+                        <h3 class="text-xl font-bold text-white uppercase tracking-tight">{step.title}</h3>
+                        <p class="text-base text-brand-muted leading-relaxed">{step.desc}</p>
                     </div>
                 </div>
             ))}
