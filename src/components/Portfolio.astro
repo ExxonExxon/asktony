@@ -10,25 +10,28 @@ const projects = [
 ---
 <section id="portfolio" class="section-padding bg-brand-surface">
     <div class="max-w-7xl mx-auto px-6 lg:px-20">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24 reveal-up">
-            <div class="space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-12 mb-24">
+            <div class="space-y-6 reveal-up">
                 <span class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em] mb-4 block">Portfolio Section</span>
                 <h2 class="heading-lg">Lorem Ipsum <br>Dolor Sit.</h2>
             </div>
-            <p class="text-readable max-w-md">
+            <p class="text-readable max-w-md reveal-up" style="animation-delay: 150ms">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {projects.map((item, index) => (
-                <div class="group space-y-6 reveal-up" style={`animation-delay: ${index * 100}ms`}>
-                    <div class="aspect-[4/5] overflow-hidden rounded-2xl shadow-soft border border-white/[0.04]">
+                <div class="group bg-brand-dark rounded-2xl border border-white/[0.06] overflow-hidden transition-all duration-500 hover:border-brand-accent/30 hover:shadow-soft reveal-up" style={`animation-delay: ${index * 100}ms`}>
+                    <div class="aspect-[4/5] overflow-hidden">
                         <img src={item.img} alt={item.title} class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                     </div>
-                    <div class="flex items-center justify-between border-b border-white/[0.06] pb-6">
+                    <div class="p-6 space-y-4">
                         <h3 class="text-lg font-bold text-white uppercase tracking-tight">{item.title}</h3>
-                        <span class="text-xs font-bold text-brand-accent uppercase tracking-wider">View</span>
+                        <a href="#" class="inline-flex items-center gap-2 text-xs font-bold text-brand-accent uppercase tracking-wider hover:text-brand-accent-bright transition-colors">
+                            Read More
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
                     </div>
                 </div>
             ))}
