@@ -53,8 +53,11 @@ const sections = [
     </div>
 </nav>
 
-<!-- Mobile Menu Button -->
-<div class="md:hidden fixed top-5 right-5 z-50">
+<!-- Mobile Top Bar (logo + hamburger) -->
+<div class="md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-3 bg-brand-base/80 backdrop-blur-xl border-b border-white/[0.06]">
+    <a href="/">
+        <span class="text-base font-bold tracking-tighter text-white uppercase">Lorem <span class="text-brand-accent">Ipsum.</span></span>
+    </a>
     <button id="mobile-menu-button" class="w-10 h-10 rounded-full bg-brand-elevated/85 backdrop-blur-xl border border-white/[0.12] shadow-heavy flex items-center justify-center text-white focus:outline-none" aria-label="Toggle Menu">
         <div class="w-4 h-3 relative flex flex-col justify-between">
             <span id="hamburger-top" class="w-full h-0.5 bg-current block transition-all duration-300 origin-left"></span>
@@ -64,56 +67,97 @@ const sections = [
     </button>
 </div>
 
-<!-- Mobile Logo -->
-<a href="/" class="md:hidden fixed top-5 left-5 z-50">
-    <span class="text-base font-bold tracking-tighter text-white uppercase">Lorem <span class="text-brand-accent">Ipsum.</span></span>
-</a>
+<!-- Mobile Menu Backdrop -->
+<div id="mobile-backdrop" class="fixed inset-0 bg-brand-base/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-500" style="display: none"></div>
 
-<!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-brand-base z-[105] flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-500 translate-y-10">
-    {[...sections, { label: 'Contact Us', href: '/contact' }].map((item) => (
-        <a href={item.href} class="mobile-nav-link text-2xl font-bold text-white uppercase tracking-wider hover:text-brand-accent transition-colors">{item.label}</a>
-    ))}
+<!-- Mobile Drawer -->
+<div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[80vw] max-w-sm bg-brand-dark/95 backdrop-blur-xl border-l border-white/[0.06] shadow-heavy translate-x-full transition-transform duration-500 ease-out" style="z-index: 45; display: none">
+    <div class="h-14"></div>
+    <div class="px-8 pt-8 pb-5">
+        <span class="text-xs font-bold tracking-[0.15em] text-white/25 uppercase">Navigation</span>
+        <div class="mt-3 w-8 h-px bg-white/[0.06]"></div>
+    </div>
+    <nav class="flex flex-col px-8 space-y-0.5">
+        {[...sections, { label: 'Contact', href: '/contact' }].map((item) => (
+            <a
+                href={item.href}
+                class="mobile-nav-link block py-3.5 text-[15px] font-medium text-white transition-all duration-300 opacity-0 translate-y-4"
+            >
+                {item.label}
+            </a>
+        ))}
+    </nav>
 </div>
 
 <script>
     const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+    const mobileDrawer = document.getElementById('mobile-drawer');
     const hamburgerTop = document.getElementById('hamburger-top');
     const hamburgerMiddle = document.getElementById('hamburger-middle');
     const hamburgerBottom = document.getElementById('hamburger-bottom');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
     let isMenuOpen = false;
 
-    function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
+    function openMenu() {
+        isMenuOpen = true;
+        document.body.style.overflow = 'hidden';
 
-        if (isMenuOpen) {
-            mobileMenu?.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
-            mobileMenu?.classList.add('opacity-100', 'translate-y-0');
-            document.body.style.overflow = 'hidden';
+        mobileBackdrop.style.display = '';
+        mobileDrawer.style.display = '';
+        void mobileDrawer?.offsetHeight;
 
-            hamburgerTop?.classList.add('rotate-[42deg]', 'translate-x-[2px]');
-            hamburgerMiddle?.classList.add('opacity-0', '-translate-x-2');
-            hamburgerBottom?.classList.add('-rotate-[42deg]', 'translate-x-[2px]');
-        } else {
-            mobileMenu?.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
-            mobileMenu?.classList.remove('opacity-100', 'translate-y-0');
-            document.body.style.overflow = '';
+        mobileBackdrop?.classList.remove('opacity-0', 'pointer-events-none');
+        mobileDrawer?.classList.remove('translate-x-full');
 
-            hamburgerTop?.classList.remove('rotate-[42deg]', 'translate-x-[2px]');
-            hamburgerMiddle?.classList.remove('opacity-0', '-translate-x-2');
-            hamburgerBottom?.classList.remove('-rotate-[42deg]', 'translate-x-[2px]');
-        }
+        hamburgerTop?.classList.add('rotate-[42deg]', 'translate-x-[2px]');
+        hamburgerMiddle?.classList.add('opacity-0', '-translate-x-2');
+        hamburgerBottom?.classList.add('-rotate-[42deg]', 'translate-x-[2px]');
+
+        document.querySelectorAll('.mobile-nav-link').forEach((link, i) => {
+            setTimeout(() => {
+                link.classList.remove('opacity-0', 'translate-y-4');
+            }, 80 + i * 60);
+        });
     }
 
-    mobileMenuButton?.addEventListener('click', toggleMenu);
+    function closeMenu() {
+        if (!isMenuOpen) return;
+        isMenuOpen = false;
+        document.body.style.overflow = '';
 
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (isMenuOpen) toggleMenu();
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        navLinks.forEach((link, i) => {
+            setTimeout(() => {
+                link.classList.add('opacity-0', 'translate-y-4');
+            }, (navLinks.length - 1 - i) * 60);
         });
+
+        setTimeout(() => {
+            mobileBackdrop?.classList.add('opacity-0', 'pointer-events-none');
+            mobileDrawer?.classList.add('translate-x-full');
+        }, (navLinks.length - 1) * 60);
+
+        hamburgerTop?.classList.remove('rotate-[42deg]', 'translate-x-[2px]');
+        hamburgerMiddle?.classList.remove('opacity-0', '-translate-x-2');
+        hamburgerBottom?.classList.remove('-rotate-[42deg]', 'translate-x-[2px]');
+    }
+
+    mobileMenuButton?.addEventListener('click', () => {
+        if (isMenuOpen) closeMenu();
+        else openMenu();
+    });
+
+    mobileBackdrop?.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    const mql = window.matchMedia('(min-width: 768px)');
+    mql.addEventListener('change', (e) => {
+        if (e.matches && isMenuOpen) closeMenu();
     });
 
     // Active icon highlighting
