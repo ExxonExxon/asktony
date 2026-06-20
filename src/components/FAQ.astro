@@ -1,49 +1,52 @@
 ---
 const faqs = [
   {
-    question: "Lorem ipsum dolor sit amet?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    question: "What types of tiles do you work with?",
+    answer: "We install ceramic, porcelain, marble, and natural stone tiles across all environments — indoor, outdoor, residential, and commercial. Every material has its own preparation and sealing requirements, and we ensure the correct approach is taken for each."
   },
   {
-    question: "Consectetur adipiscing elit?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    question: "Do you handle waterproofing and preparation?",
+    answer: "Yes. Waterproofing is critical for wet areas such as showers, bathrooms, balconies, and patios. We apply internal and external waterproofing membranes in accordance with Australian Standards before any tiling begins, and we also manage structural preparation including wall re-sheeting and cement floor screeding."
   },
   {
-    question: "Sed do eiusmod tempor incididunt ut labore?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    question: "What areas of Melbourne do you service?",
+    answer: "We cover Melbourne and surrounding suburbs for both residential and commercial projects. Whether you're renovating a single bathroom, tiling a new patio, or fitting out a commercial space, we're equipped to deliver across the metro area."
   },
   {
-    question: "Ut enim ad minim veniam?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    question: "Can you repair or re-grout existing tiles?",
+    answer: "Absolutely. We offer tile and stone repairs, re-grouting of old or worn grout lines, and silicone and polyurethane caulking for expansion joints. If the existing tiles are sound, we can restore the finish without a full replacement — saving time and preserving your surfaces."
+  },
+  {
+    question: "How do I get a quote for my project?",
+    answer: "Simply contact us via phone, email, or the contact form on this website. We'll discuss your project requirements and arrange a site visit if needed. Every quote is detailed, transparent, and provided with no obligation."
   }
 ];
 ---
 
-<section id="faq" class="section-padding bg-brand-surface">
+<section id="faq" class="section-padding bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-20">
         <div class="grid lg:grid-cols-12 gap-16 lg:gap-24">
             <div class="lg:col-span-4 reveal-up">
                 <div class="space-y-6">
-                    <span class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em] mb-4 block">FAQ Section</span>
-                    <h2 class="heading-lg">Lorem Ipsum <br>Dolor Sit.</h2>
+                    <h2 class="heading-lg">FAQ.</h2>
                     <p class="text-readable">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Everything you need to know about our tiling services. If you can't find the answer here, feel free to reach out directly.
                     </p>
                 </div>
             </div>
 
             <div class="lg:col-span-8 space-y-4">
                 {faqs.map((faq, index) => (
-                    <div class="faq-item group bg-brand-dark rounded-2xl border border-white/[0.06] overflow-hidden transition-all duration-300 reveal-up" style={`animation-delay: ${index * 100}ms`}>
+                    <div class="faq-item group bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 reveal-up" style={`animation-delay: ${index * 100}ms`}>
                         <button class="faq-trigger w-full px-8 py-6 text-left flex items-center justify-between">
-                            <span class="text-lg font-bold text-white transition-colors">{faq.question}</span>
+                            <span class="text-lg font-bold text-gray-900 transition-colors">{faq.question}</span>
                             <div class="relative w-6 h-6 flex items-center justify-center">
-                                <span class="absolute w-4 h-0.5 bg-white/40 transition-transform duration-300"></span>
-                                <span class="absolute w-0.5 h-4 bg-white/40 transition-transform duration-300"></span>
+                                <span class="absolute w-4 h-0.5 bg-gray-400 transition-transform duration-300"></span>
+                                <span class="absolute w-0.5 h-4 bg-gray-400 transition-transform duration-300"></span>
                             </div>
                         </button>
                         <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-8 text-brand-muted leading-relaxed">
+                            <div class="px-8 pb-8 text-gray-700 leading-relaxed">
                                 {faq.answer}
                             </div>
                         </div>

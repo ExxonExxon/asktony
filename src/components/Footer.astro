@@ -2,55 +2,55 @@
 const year = new Date().getFullYear();
 const socialIcons = ["fa-facebook-f", "fa-instagram", "fa-linkedin-in"];
 ---
-<footer id="contact" class="pt-32 bg-brand-surface">
+<footer id="contact" class="pt-32 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-20">
-        <div class="grid lg:grid-cols-12 gap-16 pb-24 border-b border-brand-border">
+        <div class="grid lg:grid-cols-12 gap-16 pb-24 border-b border-gray-200">
             <div class="lg:col-span-6 space-y-12">
                 <div class="space-y-6">
-                    <span class="text-3xl font-bold tracking-tighter text-white uppercase">Lorem <span class="text-brand-accent">Ipsum.</span></span>
-                    <p class="text-brand-muted max-w-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <span class="text-3xl font-bold tracking-tighter text-gray-900 uppercase">Anthony <span class="text-brand-accent">Calocani.</span></span>
+                    <p class="text-gray-700 max-w-sm">Melbourne's trusted wall and floor tiling contractor. Specialising in ceramic, porcelain, marble and natural stone installation for residential and commercial projects.</p>
                 </div>
                 <div class="flex space-x-4">
                     {socialIcons.map((icon) => (
-                        <a href="#" class="w-10 h-10 rounded-full bg-brand-dark border border-brand-border flex items-center justify-center text-brand-dim hover:text-brand-accent hover:border-brand-accent/30 transition-all duration-300">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-accent hover:border-brand-accent/30 transition-all duration-300">
                             <i class={`fab ${icon} text-sm`}></i>
                         </a>
                     ))}
                 </div>
-                <div class="pt-6 space-y-1.5 border-t border-brand-border">
-                    <p class="text-sm text-brand-muted">Website made by Tomas Gorjux</p>
-                    <!-- <p class="text-sm text-brand-dim">In partnership with <a href="https://tradsiee.com" target="_blank" rel="noopener" class="text-brand-accent hover:text-brand-accent-bright underline underline-offset-2 transition-colors">Tradsiee</a></p> -->
+                <div class="pt-6 space-y-1.5 border-t border-gray-200">
+                    <p class="text-sm text-gray-600">Website made by Tomas Gorjux</p>
+                    <p class="text-sm text-gray-500">Powered by <a href="https://tradsiee.com" target="_blank" rel="noopener" class="font-tradsiee font-bold text-brand-accent hover:text-brand-accent-bright underline underline-offset-2 transition-colors">Tradsiee</a></p>
                 </div>
             </div>
 
             <div class="lg:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-12">
                 <div class="space-y-8">
-                    <span class="text-xs font-bold uppercase tracking-[0.1em] text-brand-muted">Navigation</span>
+                    <span class="text-xs font-bold uppercase tracking-[0.1em] text-gray-600">Navigation</span>
                     <ul class="space-y-4">
-                        {['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'].map(item => (
-                            <li><a href="#" class="text-brand-muted hover:text-brand-accent-subtle transition-colors text-sm font-medium uppercase tracking-wider">{item}</a></li>
+                        {['About', 'Services', 'Portfolio', 'Contact'].map(item => (
+                            <li><a href={item === 'Contact' ? '/contact' : `/#${item.toLowerCase()}`} class="text-gray-700 hover:text-brand-accent transition-colors text-sm font-medium uppercase tracking-wider">{item}</a></li>
                         ))}
                     </ul>
                 </div>
                 <div class="space-y-8">
-                    <span class="text-xs font-bold uppercase tracking-[0.1em] text-brand-muted">Contact</span>
+                    <span class="text-xs font-bold uppercase tracking-[0.1em] text-gray-600">Contact</span>
                     <ul class="space-y-4">
-                        <li><p class="text-brand-muted text-sm">lorem@ipsum.com</p></li>
-                        <li><p class="text-brand-muted text-sm">00 0000 0000</p></li>
+                        <li><p class="text-gray-700 text-sm">tony@asktony.com.au</p></li>
+                        <li><p class="text-gray-700 text-sm">00 0000 0000</p></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-brand-dark border-t border-brand-border">
+    <div class="bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-20 py-10 flex flex-col md:flex-row justify-between items-center gap-8">
-            <p class="text-xs font-bold uppercase tracking-[0.15em] text-brand-muted">
-                &copy; {year} Lorem Ipsum. All Rights Reserved.
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-gray-600">
+                &copy; {year} Anthony Calocani. All Rights Reserved.
             </p>
             <div class="flex items-center space-x-8">
-                <a href="#" class="text-xs font-bold uppercase tracking-[0.15em] text-brand-muted hover:text-white transition-colors">Lorem Ipsum</a>
-                <a href="#" class="text-xs font-bold uppercase tracking-[0.15em] text-brand-muted hover:text-white transition-colors">Lorem Ipsum</a>
+                <a href="/#faq" class="text-xs font-bold uppercase tracking-[0.15em] text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
+                <a href="/contact" class="text-xs font-bold uppercase tracking-[0.15em] text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
             </div>
         </div>
     </div>

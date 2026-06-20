@@ -1,27 +1,27 @@
 ---
 const steps = [
-    { title: "Record Your Problem", desc: "Submit a short video describing the issue you need fixed. No back-and-forth, no guessing — just show us what's going on." },
-    { title: "We Review the Job", desc: "Your video lead comes through with full visual context. We assess the work needed before we arrive, so nothing gets missed." },
-    { title: "Get It Done", desc: "We reach out, book the job, and get it sorted. One trip, everything we need, no surprises." }
+    { title: "Send a Video Enquiry", desc: "Record your project on any device — phone, tablet or laptop. Describe what needs doing and we'll see exactly what you're working with before we arrive. No site visit required to get a quote." },
+    { title: "We Assess & Quote", desc: "Your enquiry lands in our pipeline with the video attached. We review the work, calculate materials, and send you a detailed quote — fast, accurate, and backed by full visual context." },
+    { title: "Expert Installation", desc: "Once approved, we arrive with everything prepared. From structural preparation and waterproofing to precision tiling and professional finishing — one team, one visit, no surprises." }
 ];
 ---
-<section id="how-it-works" class="section-padding bg-brand-dark">
+<section id="how-it-works" class="section-padding bg-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-20">
         <div class="max-w-3xl mb-24 space-y-8 reveal-up">
-            <h2 class="heading-lg">How It <span class="text-brand-accent">Works.</span></h2>
-            <!-- <p class="text-readable">Powered by <a href="https://tradsiee.com" target="_blank" rel="noopener" class="text-brand-accent hover:text-brand-accent-bright underline underline-offset-2 transition-colors">Tradsiee</a> — video leads that give us the full picture before we step foot on site.</p> -->
+            <h2 class="heading-lg">Process.</h2>
+            <p class="text-readable">Powered by <a href="https://tradsiee.com" target="_blank" rel="noopener" class="font-tradsiee font-bold text-brand-accent hover:text-brand-accent-bright underline underline-offset-2 transition-colors">Tradsiee</a> — video leads that let us assess and quote your project before we step foot on site.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-12">
             {steps.map((step, index) => (
                 <div class="space-y-8 reveal-up" style={`animation-delay: ${index * 200}ms`}>
                     <div class="flex items-center space-x-4">
-                        <span class="text-3xl font-bold text-white/[0.15]">{String(index + 1).padStart(2, '0')}</span>
-                        <div class="h-px flex-1 bg-brand-border"></div>
+                        <span class="text-3xl font-bold text-gray-300">{String(index + 1).padStart(2, '0')}</span>
+                        <div class="h-px flex-1 bg-gray-300"></div>
                     </div>
                     <div class="space-y-4">
-                        <h3 class="text-xl font-bold text-white uppercase tracking-tight">{step.title}</h3>
-                        <p class="text-base text-brand-muted leading-relaxed">{step.desc}</p>
+                        <h3 class="text-xl font-bold text-gray-900 uppercase tracking-tight">{step.title}</h3>
+                        <p class="text-base text-gray-700 leading-relaxed">{step.desc}</p>
                     </div>
                 </div>
             ))}
