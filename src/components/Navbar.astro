@@ -1,241 +1,139 @@
 ---
 const sections = [
-    { label: 'About', href: '/#about', icon: 'fa-user' },
-    { label: 'Services', href: '/#services', icon: 'fa-tools' },
-    { label: 'Portfolio', href: '/#portfolio', icon: 'fa-th' },
-    { label: 'Process', href: '/#how-it-works', icon: 'fa-clipboard-list' },
-    { label: 'FAQ', href: '/#faq', icon: 'fa-question' },
+	{ label: 'About', href: '/#about' },
+	{ label: 'Services', href: '/#services' },
+	{ label: 'Portfolio', href: '/#portfolio' },
+	{ label: 'Process', href: '/#how-it-works' },
+	{ label: 'FAQ', href: '/#faq' },
 ];
 ---
 
-<!-- Vertical Pill Navigation -->
-<nav id="main-nav" class="fixed left-4 md:left-6 xl:left-8 top-1/2 -translate-y-1/2 z-50 hidden md:block">
-    <div class="pill relative flex flex-col items-center gap-6 py-6 px-3.5 bg-brand-elevated/95 backdrop-blur-xl rounded-full border border-white/[0.12] shadow-heavy">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-white/10">
+	<div class="max-w-7xl mx-auto px-6 lg:px-20 flex items-center justify-between h-20">
+		<a href="/" class="text-lg md:text-xl font-bold tracking-tighter uppercase text-gray-900">
+			Anthony
+		</a>
 
-        <!-- Brand mark -->
-        <a href="/" class="brand-mark group relative flex items-center w-9 h-9 justify-center rounded-lg" aria-label="Home">
-            <svg class="w-5 h-5 text-brand-accent" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-                <polygon points="8,0 16,8 8,16 0,8" />
-                <polygon points="8,3 13,8 8,13 3,8" fill="currentColor" stroke="none" />
-            </svg>
-            <span class="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-white bg-brand-surface rounded-full opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap border border-white/[0.08] shadow-sm">
-                Anthony Calocani
-            </span>
-        </a>
+		<div class="hidden md:flex items-center gap-8">
+			{sections.map((s) => (
+				<a
+					href={s.href}
+					class="text-xs font-bold text-gray-600 hover:text-brand-accent transition-colors uppercase tracking-[0.1em]"
+				>
+					{s.label}
+				</a>
+			))}
+			<a href="/contact" class="btn-primary !py-3 !px-7">Get a Quote</a>
+		</div>
 
-        <div class="nav-divider w-7 h-px bg-white/[0.12]"></div>
+		<button
+			id="mobile-menu-button"
+			class="md:hidden w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-600 focus:outline-none"
+			aria-label="Toggle Menu"
+		>
+			<div class="w-4 h-3 relative flex flex-col justify-between">
+				<span id="hamburger-top" class="w-full h-0.5 bg-current block transition-all duration-300 origin-left"></span>
+				<span id="hamburger-middle" class="w-full h-0.5 bg-current block transition-all duration-300"></span>
+				<span id="hamburger-bottom" class="w-full h-0.5 bg-current block transition-all duration-300 origin-left"></span>
+			</div>
+		</button>
+	</div>
 
-        {sections.map((section) => (
-            <a
-                href={section.href}
-                class="nav-dot group relative flex items-center w-9 h-9 justify-center rounded-lg"
-                data-section={section.href.replace('/#', '')}
-                aria-label={section.label}
-            >
-                <i class={`fas ${section.icon} text-sm text-white/60 transition-all duration-300 group-hover:text-brand-accent`}></i>
-                <span class="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-white bg-brand-surface rounded-full opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap border border-white/[0.08] shadow-sm">
-                    {section.label}
-                </span>
-            </a>
-        ))}
+	<!-- Mobile Backdrop -->
+	<div id="mobile-backdrop" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300" style="display: none"></div>
 
-        <div class="nav-divider w-7 h-px bg-white/[0.12]"></div>
-
-        <a
-            href="/contact"
-            class="nav-contact group relative flex items-center w-9 h-9 justify-center rounded-lg"
-            aria-label="Contact"
-        >
-            <i class="fas fa-phone text-sm text-brand-accent transition-all duration-300 group-hover:scale-110"></i>
-            <span class="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-white bg-brand-accent-subtle rounded-full opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out whitespace-nowrap shadow-sm">
-                Contact
-            </span>
-        </a>
-    </div>
+	<!-- Mobile Drawer -->
+	<div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[80vw] max-w-sm bg-white border-l border-gray-200 shadow-heavy translate-x-full transition-transform duration-300 ease-out" style="z-index: 45; display: none">
+		<div class="flex items-center justify-between px-6 h-20 border-b border-gray-100">
+			<span class="text-xs font-bold tracking-[0.15em] text-gray-500 uppercase">Navigation</span>
+			<button id="mobile-close" class="w-8 h-8 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+				<i class="fas fa-times text-xs"></i>
+			</button>
+		</div>
+		<nav class="flex flex-col px-6 pt-6 space-y-1">
+			{[...sections, { label: 'Contact', href: '/contact' }].map((item) => (
+				<a
+					href={item.href}
+					class="mobile-nav-link block py-4 text-base font-medium text-gray-700 hover:text-brand-accent transition-colors border-b border-gray-100 opacity-0 translate-x-4"
+				>
+					{item.label}
+				</a>
+			))}
+			<a href="/contact" class="btn-primary text-center mt-6 !py-4">Get a Quote</a>
+		</nav>
+	</div>
 </nav>
 
-<!-- Mobile Top Bar (logo + hamburger) -->
-<div class="md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-3 bg-brand-base/80 backdrop-blur-xl border-b border-white/[0.06]">
-    <a href="/">
-        <span class="text-base font-bold tracking-tighter text-white uppercase">Anthony <span class="text-brand-accent">Calocani.</span></span>
-    </a>
-    <button id="mobile-menu-button" class="w-10 h-10 rounded-full bg-brand-elevated/85 backdrop-blur-xl border border-white/[0.12] shadow-heavy flex items-center justify-center text-white focus:outline-none" aria-label="Toggle Menu">
-        <div class="w-4 h-3 relative flex flex-col justify-between">
-            <span id="hamburger-top" class="w-full h-0.5 bg-current block transition-all duration-300 origin-left"></span>
-            <span id="hamburger-middle" class="w-full h-0.5 bg-current block transition-all duration-300"></span>
-            <span id="hamburger-bottom" class="w-full h-0.5 bg-current block transition-all duration-300 origin-left"></span>
-        </div>
-    </button>
-</div>
-
-<!-- Mobile Menu Backdrop -->
-<div id="mobile-backdrop" class="fixed inset-0 bg-brand-base/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-500" style="display: none"></div>
-
-<!-- Mobile Drawer -->
-<div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[80vw] max-w-sm bg-brand-dark/95 backdrop-blur-xl border-l border-white/[0.06] shadow-heavy translate-x-full transition-transform duration-500 ease-out" style="z-index: 45; display: none">
-    <div class="h-14"></div>
-    <div class="px-8 pt-8 pb-5">
-        <span class="text-xs font-bold tracking-[0.15em] text-white/25 uppercase">Navigation</span>
-        <div class="mt-3 w-8 h-px bg-white/[0.06]"></div>
-    </div>
-    <nav class="flex flex-col px-8 space-y-0.5">
-        {[...sections, { label: 'Contact', href: '/contact' }].map((item) => (
-            <a
-                href={item.href}
-                class="mobile-nav-link block py-3.5 text-[15px] font-medium text-white transition-all duration-300 opacity-0 translate-y-4"
-            >
-                {item.label}
-            </a>
-        ))}
-    </nav>
-</div>
-
 <script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileBackdrop = document.getElementById('mobile-backdrop');
-    const mobileDrawer = document.getElementById('mobile-drawer');
-    const hamburgerTop = document.getElementById('hamburger-top');
-    const hamburgerMiddle = document.getElementById('hamburger-middle');
-    const hamburgerBottom = document.getElementById('hamburger-bottom');
+	const mobileMenuButton = document.getElementById('mobile-menu-button');
+	const mobileClose = document.getElementById('mobile-close');
+	const mobileBackdrop = document.getElementById('mobile-backdrop');
+	const mobileDrawer = document.getElementById('mobile-drawer');
+	const hamburgerTop = document.getElementById('hamburger-top');
+	const hamburgerMiddle = document.getElementById('hamburger-middle');
+	const hamburgerBottom = document.getElementById('hamburger-bottom');
 
-    let isMenuOpen = false;
+	let isMenuOpen = false;
 
-    function openMenu() {
-        isMenuOpen = true;
-        document.body.style.overflow = 'hidden';
+	function openMenu() {
+		isMenuOpen = true;
+		document.body.style.overflow = 'hidden';
 
-        mobileBackdrop.style.display = '';
-        mobileDrawer.style.display = '';
-        void mobileDrawer?.offsetHeight;
+		mobileBackdrop.style.display = '';
+		mobileDrawer.style.display = '';
+		void mobileDrawer?.offsetHeight;
 
-        mobileBackdrop?.classList.remove('opacity-0', 'pointer-events-none');
-        mobileDrawer?.classList.remove('translate-x-full');
+		mobileBackdrop?.classList.remove('opacity-0', 'pointer-events-none');
+		mobileDrawer?.classList.remove('translate-x-full');
 
-        hamburgerTop?.classList.add('rotate-[42deg]', 'translate-x-[2px]');
-        hamburgerMiddle?.classList.add('opacity-0', '-translate-x-2');
-        hamburgerBottom?.classList.add('-rotate-[42deg]', 'translate-x-[2px]');
+		hamburgerTop?.classList.add('rotate-[42deg]', 'translate-x-[2px]');
+		hamburgerMiddle?.classList.add('opacity-0', '-translate-x-2');
+		hamburgerBottom?.classList.add('-rotate-[42deg]', 'translate-x-[2px]');
 
-        document.querySelectorAll('.mobile-nav-link').forEach((link, i) => {
-            setTimeout(() => {
-                link.classList.remove('opacity-0', 'translate-y-4');
-            }, 80 + i * 60);
-        });
-    }
+		document.querySelectorAll('.mobile-nav-link').forEach((link, i) => {
+			setTimeout(() => {
+				link.classList.remove('opacity-0', 'translate-x-4');
+			}, 80 + i * 60);
+		});
+	}
 
-    function closeMenu() {
-        if (!isMenuOpen) return;
-        isMenuOpen = false;
-        document.body.style.overflow = '';
+	function closeMenu() {
+		if (!isMenuOpen) return;
+		isMenuOpen = false;
+		document.body.style.overflow = '';
 
-        const navLinks = document.querySelectorAll('.mobile-nav-link');
+		const navLinks = document.querySelectorAll('.mobile-nav-link');
 
-        navLinks.forEach((link, i) => {
-            setTimeout(() => {
-                link.classList.add('opacity-0', 'translate-y-4');
-            }, (navLinks.length - 1 - i) * 60);
-        });
+		navLinks.forEach((link, i) => {
+			setTimeout(() => {
+				link.classList.add('opacity-0', 'translate-x-4');
+			}, (navLinks.length - 1 - i) * 60);
+		});
 
-        setTimeout(() => {
-            mobileBackdrop?.classList.add('opacity-0', 'pointer-events-none');
-            mobileDrawer?.classList.add('translate-x-full');
-        }, (navLinks.length - 1) * 60);
+		setTimeout(() => {
+			mobileBackdrop?.classList.add('opacity-0', 'pointer-events-none');
+			mobileDrawer?.classList.add('translate-x-full');
+		}, (navLinks.length - 1) * 60);
 
-        hamburgerTop?.classList.remove('rotate-[42deg]', 'translate-x-[2px]');
-        hamburgerMiddle?.classList.remove('opacity-0', '-translate-x-2');
-        hamburgerBottom?.classList.remove('-rotate-[42deg]', 'translate-x-[2px]');
-    }
+		hamburgerTop?.classList.remove('rotate-[42deg]', 'translate-x-[2px]');
+		hamburgerMiddle?.classList.remove('opacity-0', '-translate-x-2');
+		hamburgerBottom?.classList.remove('-rotate-[42deg]', 'translate-x-[2px]');
+	}
 
-    mobileMenuButton?.addEventListener('click', () => {
-        if (isMenuOpen) closeMenu();
-        else openMenu();
-    });
+	mobileMenuButton?.addEventListener('click', () => {
+		if (isMenuOpen) closeMenu();
+		else openMenu();
+	});
 
-    mobileBackdrop?.addEventListener('click', closeMenu);
+	mobileClose?.addEventListener('click', closeMenu);
+	mobileBackdrop?.addEventListener('click', closeMenu);
 
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
+	document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+		link.addEventListener('click', closeMenu);
+	});
 
-    const mql = window.matchMedia('(min-width: 768px)');
-    mql.addEventListener('change', (e) => {
-        if (e.matches && isMenuOpen) closeMenu();
-    });
-
-    // Active icon highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const navDots = document.querySelectorAll('.nav-dot');
-
-    function highlightIcon() {
-        const scrollY = window.pageYOffset;
-
-        sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 60;
-            const sectionId = section.getAttribute('id');
-
-            const dot = document.querySelector(`.nav-dot[data-section="${sectionId}"]`);
-            const icon = dot?.querySelector('i');
-
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                icon?.classList.remove('text-white/60');
-                dot?.classList.add('active-icon');
-            } else {
-                icon?.classList.add('text-white/60');
-                dot?.classList.remove('active-icon');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', highlightIcon, { passive: true });
-    highlightIcon();
+	const mql = window.matchMedia('(min-width: 768px)');
+	mql.addEventListener('change', (e) => {
+		if (e.matches && isMenuOpen) closeMenu();
+	});
 </script>
-
-<style>
-    .pill::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        pointer-events: none;
-        background-image: radial-gradient(rgba(255,255,255,0.04) 0.7px, transparent 0.7px);
-        background-size: 4px 4px;
-        z-index: 0;
-    }
-
-    .pill::after {
-        content: '';
-        position: absolute;
-        inset: -1px;
-        border-radius: inherit;
-        pointer-events: none;
-        background: linear-gradient(135deg, rgba(99,102,241,0.08), transparent 40%);
-        z-index: 0;
-    }
-
-    .pill > * {
-        position: relative;
-        z-index: 1;
-    }
-
-    .nav-dot.active-icon {
-        border: 1px solid rgba(99,102,241,0.25);
-        border-radius: 0.5rem;
-        background: rgba(99,102,241,0.15);
-    }
-
-    .nav-dot.active-icon i {
-        color: #818cf8 !important;
-    }
-
-    .nav-dot:active i,
-    .nav-contact:active i,
-    .brand-mark:active svg {
-        animation: click-pop 0.3s ease-out;
-    }
-
-    @keyframes click-pop {
-        0%   { transform: scale(1); }
-        50%  { transform: scale(0.85); }
-        100% { transform: scale(1); }
-    }
-</style>

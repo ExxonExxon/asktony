@@ -73,6 +73,20 @@
     }
   }
 
+  .btn-white {
+    @apply px-10 py-5 text-xs font-bold rounded-full transition-standard uppercase tracking-[0.15em] inline-block text-center relative overflow-hidden;
+    background-color: white;
+    color: #6366f1;
+    &::after {
+      content: '';
+      @apply absolute inset-0 translate-y-full transition-transform duration-300;
+      background-color: rgba(99, 102, 241, 0.1);
+    }
+    &:hover::after {
+      @apply translate-y-0;
+    }
+  }
+
   .btn-secondary {
     @apply px-10 py-5 text-xs font-bold rounded-full transition-standard uppercase tracking-[0.15em] inline-block text-center;
     border: 1px solid rgba(0, 0, 0, 0.15);
