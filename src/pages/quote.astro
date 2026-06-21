@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Get a Quote | Anthony Calocani — Wall & Floor Tiling Melbourne" description="Send a Tradsiee video enquiry for a fast, detailed quote. No site visit needed. Melbourne's trusted wall and floor tiling contractor.">
+	<Navbar />
+	<main class="pt-20">
+		<section class="section-padding bg-gray-50">
+			<div class="max-w-7xl mx-auto px-6 lg:px-20">
+				<div class="grid lg:grid-cols-2 gap-20">
+					<!-- Quote Info -->
+					<div class="space-y-12 reveal-up">
+						<div class="space-y-6">
+							<h1 class="heading-lg">Get a Quote.</h1>
+							<p class="text-readable max-w-md">
+								Send a video enquiry through Tradsiee and get a detailed, obligation-free quote fast. No site visit needed.
+							</p>
+						</div>
+
+						<div class="space-y-6">
+							<h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">How it works</h3>
+							<div class="space-y-8">
+								<div class="flex items-start space-x-5">
+									<span class="text-2xl font-bold text-gray-300 w-8 flex-shrink-0">01</span>
+									<div class="space-y-2">
+										<p class="text-xl font-bold text-gray-900 uppercase tracking-tight">Record your space</p>
+										<p class="text-base text-gray-700 leading-relaxed">Use your phone to show the area — walls, floors, anything that needs work. We'll see exactly what you need.</p>
+									</div>
+								</div>
+								<div class="flex items-start space-x-5">
+									<span class="text-2xl font-bold text-gray-300 w-8 flex-shrink-0">02</span>
+									<div class="space-y-2">
+										<p class="text-xl font-bold text-gray-900 uppercase tracking-tight">We assess &amp; quote</p>
+										<p class="text-base text-gray-700 leading-relaxed">We review the video, calculate materials, and send a detailed quote — fast and accurate, full visual context.</p>
+									</div>
+								</div>
+								<div class="flex items-start space-x-5">
+									<span class="text-2xl font-bold text-gray-300 w-8 flex-shrink-0">03</span>
+									<div class="space-y-2">
+										<p class="text-xl font-bold text-gray-900 uppercase tracking-tight">Book installation</p>
+										<p class="text-base text-gray-700 leading-relaxed">Approve the quote and we arrive ready. One team, one visit, no surprises.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="space-y-6 pt-4">
+							<h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">Still have questions?</h3>
+							<div class="flex items-start space-x-6">
+								<div class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0">
+									<i class="fas fa-envelope text-brand-accent"></i>
+								</div>
+								<div>
+									<p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Email Us</p>
+									<p class="text-xl font-bold text-gray-900">tony@asktony.com.au</p>
+								</div>
+							</div>
+
+							<div class="flex items-start space-x-6">
+								<div class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0">
+									<i class="fas fa-map-marker-alt text-brand-accent"></i>
+								</div>
+								<div>
+									<p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Location</p>
+									<p class="text-xl font-bold text-gray-900">Melbourne, VIC</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tradsiee Widget -->
+					<div class="reveal-up text-center" style="animation-delay: 0.2s;">
+						<div class="space-y-4 mb-8">
+							<h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">Send your video enquiry</h3>
+							<p class="text-base text-gray-700 leading-relaxed">Record directly in your browser — no account needed.</p>
+						</div>
+						<div id="tradsiee-widget-root"></div>
+						<script src="https://tradsiee.com/loader.js?slug=admin-5003" async></script>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

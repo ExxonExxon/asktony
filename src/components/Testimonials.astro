@@ -1,29 +1,36 @@
 ---
 ---
-<section class="section-padding bg-gray-100">
+<section class="section-padding bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-20">
-        <div class="max-w-3xl mb-24 reveal-up">
-            <h2 class="heading-lg">Reviews.</h2>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-12">
-            {[
-                { quote: "Tony transformed our bathroom completely. The tiling is flawless — every cut is precise, the grout lines are perfectly even, and the waterproofing gives us complete peace of mind. Couldn't recommend him more highly.", name: "Sarah & Michael R." },
-                { quote: "We needed a commercial-grade finish for our cafe floor and Tony delivered exactly that. The job was completed on schedule, the workspace was kept clean throughout, and the epoxy grout has held up beautifully with heavy foot traffic.", name: "David L." },
-                { quote: "Our outdoor patio had drainage issues that other tilers wouldn't touch. Tony re-screeded the entire area to create the correct fall, applied proper external waterproofing, and laid porcelain tiles that look stunning. A true professional.", name: "Rachel & James M." }
-            ].map((item, index) => (
-                <div class="glass-card p-8 space-y-8 reveal-up" style={`animation-delay: ${index * 200}ms`}>
-                    <div class="flex space-x-1 text-brand-accent">
-                        {[1, 2, 3, 4, 5].map(() => <i class="fas fa-star text-[10px]"></i>)}
-                    </div>
-                    <p class="text-base font-medium text-gray-700 leading-relaxed italic">"{item.quote}"</p>
-                    <div class="flex items-center space-x-4 pt-4 border-t border-gray-200">
-                        <div>
-                            <p class="text-xs font-bold text-gray-900 uppercase tracking-wider">{item.name}</p>
-                        </div>
-                    </div>
+        <div class="max-w-4xl mx-auto text-center space-y-12 reveal-up">
+            <div class="space-y-6">
+                <h2 class="heading-lg">Ready to Start Your Project?</h2>
+                <p class="text-readable max-w-2xl mx-auto">
+                    Get a detailed, obligation-free quote within 24 hours. Send a video enquiry and we'll assess everything before we arrive.
+                </p>
+                <div class="pt-4">
+                    <a href="/quote" class="btn-primary">Get a Free Quote</a>
                 </div>
-            ))}
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 pt-8 border-t border-gray-200">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-shield-alt text-brand-accent"></i>
+                    <span class="text-sm font-bold text-gray-700">Licensed &amp; Insured</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-award text-brand-accent"></i>
+                    <span class="text-sm font-bold text-gray-700">5-Year Guarantee</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-calendar-check text-brand-accent"></i>
+                    <span class="text-sm font-bold text-gray-700">6 Years Experience</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-clock text-brand-accent"></i>
+                    <span class="text-sm font-bold text-gray-700">Fast Quotes</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>

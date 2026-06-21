@@ -2,13 +2,11 @@
 const sections = [
 	{ label: 'About', href: '/#about' },
 	{ label: 'Services', href: '/#services' },
-	{ label: 'Portfolio', href: '/#portfolio' },
-	{ label: 'Process', href: '/#how-it-works' },
 	{ label: 'FAQ', href: '/#faq' },
 ];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-white/10">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
 	<div class="max-w-7xl mx-auto px-6 lg:px-20 flex items-center justify-between h-20">
 		<a href="/" class="text-lg md:text-xl font-bold tracking-tighter uppercase text-gray-900">
 			Anthony
@@ -23,7 +21,7 @@ const sections = [
 					{s.label}
 				</a>
 			))}
-			<a href="/contact" class="btn-primary !py-3 !px-7">Get a Quote</a>
+			<a href="/quote" class="btn-primary !py-3 !px-7">Get a Quote</a>
 		</div>
 
 		<button
@@ -51,7 +49,7 @@ const sections = [
 			</button>
 		</div>
 		<nav class="flex flex-col px-6 pt-6 space-y-1">
-			{[...sections, { label: 'Contact', href: '/contact' }].map((item) => (
+			{[...sections, { label: 'Get a Quote', href: '/quote' }].map((item) => (
 				<a
 					href={item.href}
 					class="mobile-nav-link block py-4 text-base font-medium text-gray-700 hover:text-brand-accent transition-colors border-b border-gray-100 opacity-0 translate-x-4"
@@ -59,7 +57,7 @@ const sections = [
 					{item.label}
 				</a>
 			))}
-			<a href="/contact" class="btn-primary text-center mt-6 !py-4">Get a Quote</a>
+			<a href="/quote" class="btn-primary text-center mt-6 !py-4">Get a Quote</a>
 		</nav>
 	</div>
 </nav>
