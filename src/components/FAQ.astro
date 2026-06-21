@@ -45,9 +45,11 @@ const faqs = [
                                 <span class="absolute w-0.5 h-4 bg-gray-400 transition-transform duration-300"></span>
                             </div>
                         </button>
-                        <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="px-8 pb-8 text-gray-700 leading-relaxed">
-                                {faq.answer}
+                        <div class="faq-content grid transition-all duration-500 ease-in-out" style="grid-template-rows: 0fr; opacity: 0;">
+                            <div class="overflow-hidden min-h-0">
+                                <div class="px-8 pb-8 text-gray-700 leading-relaxed">
+                                    {faq.answer}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -66,25 +68,27 @@ const faqs = [
         const iconVertical = item.querySelector('.faq-trigger span:last-child');
 
         trigger?.addEventListener('click', () => {
-            const isOpen = !content?.classList.contains('max-h-0');
+            const isOpen = content?.style.gridTemplateRows === '1fr';
 
             // Close all others
             faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.querySelector('.faq-content')?.classList.add('max-h-0', 'opacity-0');
-                    otherItem.querySelector('.faq-content')?.classList.remove('max-h-[500px]', 'opacity-100');
-                    otherItem.querySelector('.faq-trigger span:last-child')?.classList.remove('rotate-90', 'opacity-0');
+                const otherContent = otherItem.querySelector('.faq-content');
+                const otherIcon = otherItem.querySelector('.faq-trigger span:last-child');
+                if (otherItem !== item && otherContent) {
+                    otherContent.style.gridTemplateRows = '0fr';
+                    otherContent.style.opacity = '0';
+                    otherIcon?.classList.remove('rotate-90', 'opacity-0');
                 }
             });
 
             // Toggle current
             if (isOpen) {
-                content?.classList.add('max-h-0', 'opacity-0');
-                content?.classList.remove('max-h-[500px]', 'opacity-100');
+                content.style.gridTemplateRows = '0fr';
+                content.style.opacity = '0';
                 iconVertical?.classList.remove('rotate-90', 'opacity-0');
             } else {
-                content?.classList.remove('max-h-0', 'opacity-0');
-                content?.classList.add('max-h-[500px]', 'opacity-100');
+                content.style.gridTemplateRows = '1fr';
+                content.style.opacity = '1';
                 iconVertical?.classList.add('rotate-90', 'opacity-0');
             }
         });
