@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Get a Quote | Anthony Calocani — Wall & Floor Tiling Melbourne" description="Send a Tradsiee video enquiry for a fast, detailed quote. No site visit needed. Melbourne's trusted wall and floor tiling contractor.">
+<Layout title="Get a Quote | Anthony Calocani — Wall & Floor Tiling Melbourne" description="Send a video enquiry through Tradsiee for a free quote. No site visit needed.">
 	<Navbar />
 	<main class="pt-20">
 		<section class="section-padding bg-gray-50">
@@ -15,7 +15,7 @@ import Footer from '../components/Footer.astro';
 						<div class="space-y-6">
 							<h1 class="heading-lg">Get a Quote.</h1>
 							<p class="text-readable max-w-md">
-								Send a video enquiry through Tradsiee and get a detailed, obligation-free quote fast. No site visit needed.
+								Send a video enquiry through Tradsiee and get a free quote. We review the job before we step on site.
 							</p>
 						</div>
 
@@ -26,21 +26,21 @@ import Footer from '../components/Footer.astro';
 									<span class="text-2xl font-bold text-gray-300 w-8 flex-shrink-0">01</span>
 									<div class="space-y-2">
 										<p class="text-xl font-bold text-gray-900 uppercase tracking-tight">Record your space</p>
-										<p class="text-base text-gray-700 leading-relaxed">Use your phone to show the area — walls, floors, anything that needs work. We'll see exactly what you need.</p>
+										<p class="text-base text-gray-700 leading-relaxed">Use your phone to show the area. Walls, floors, the whole space. We'll see exactly what needs doing.</p>
 									</div>
 								</div>
 								<div class="flex items-start space-x-5">
 									<span class="text-2xl font-bold text-gray-300 w-8 flex-shrink-0">02</span>
 									<div class="space-y-2">
 										<p class="text-xl font-bold text-gray-900 uppercase tracking-tight">We assess &amp; quote</p>
-										<p class="text-base text-gray-700 leading-relaxed">We review the video, calculate materials, and send a detailed quote — fast and accurate, full visual context.</p>
+										<p class="text-base text-gray-700 leading-relaxed">We review the video, calculate the materials and send a detailed quote. Faster than a site visit.</p>
 									</div>
 								</div>
 								<div class="flex items-start space-x-5">
 									<span class="text-2xl font-bold text-gray-300 w-8 flex-shrink-0">03</span>
 									<div class="space-y-2">
 										<p class="text-xl font-bold text-gray-900 uppercase tracking-tight">Book installation</p>
-										<p class="text-base text-gray-700 leading-relaxed">Approve the quote and we arrive ready. One team, one visit, no surprises.</p>
+										<p class="text-base text-gray-700 leading-relaxed">Approve the quote and we come ready. One team, one visit, done right.</p>
 									</div>
 								</div>
 							</div>
@@ -54,7 +54,17 @@ import Footer from '../components/Footer.astro';
 								</div>
 								<div>
 									<p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Email Us</p>
-									<p class="text-xl font-bold text-gray-900">tony@asktony.com.au</p>
+									<a href="mailto:tony@asktony.com.au" class="text-xl font-bold text-gray-900 hover:text-brand-accent transition-colors">tony@asktony.com.au</a>
+								</div>
+							</div>
+
+							<div class="flex items-start space-x-6">
+								<div class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0">
+									<i class="fas fa-phone text-brand-accent"></i>
+								</div>
+								<div>
+									<p class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Call Us</p>
+									<a href="tel:+61451644016" class="text-xl font-bold text-gray-900 hover:text-brand-accent transition-colors">+61 451 644 016</a>
 								</div>
 							</div>
 
@@ -74,7 +84,7 @@ import Footer from '../components/Footer.astro';
 					<div class="reveal-up text-center" style="animation-delay: 0.2s;">
 						<div class="space-y-4 mb-8">
 							<h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">Send your video enquiry</h3>
-							<p class="text-base text-gray-700 leading-relaxed">Record directly in your browser — no account needed.</p>
+							<p class="text-base text-gray-700 leading-relaxed">Record directly in your browser. No account needed.</p>
 						</div>
 						<div id="tradsiee-widget-root"></div>
 						<script src="https://tradsiee.com/loader.js?slug=admin-5003" async></script>
