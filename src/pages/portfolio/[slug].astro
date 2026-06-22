@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { projects, getProjectBySlug } from '../../data/projects';
+
+export async function getStaticPaths() {
+  return projects.map((p) => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+const { name, category, images } = project;
+---
+
+<Layout
+  title={`${name} | Anthony Calocani — Portfolio`}
+  description={`${name} — ${category?.toLowerCase()} tiling project by Anthony Calocani in Melbourne.`}
+>
+  <Navbar />
+  <main class="pt-20">
+    <section class="section-padding pb-0 lg:pb-0">
+      <div class="max-w-7xl mx-auto px-6 lg:px-20">
+        <a
+          href="/#portfolio"
+          class="inline-flex items-center gap-2 text-xs font-bold text-brand-accent uppercase tracking-wider hover:text-brand-accent-bright transition-colors mb-8"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          Back to Portfolio
+        </a>
+        <div class="mb-12 reveal-up">
+          <span class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">{category}</span>
+          <h1 class="heading-lg mt-2">{name}</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-32 lg:pb-48">
+      <div class="max-w-7xl mx-auto px-6 lg:px-20">
+        {images.length > 0 ? (
+          <div class="masonry-gallery reveal-up">
+            {images.map((src, i) => (
+              <div class="masonry-item">
+                <img src={src} alt={`${name} — photo ${i + 1}`} loading={i > 5 ? "lazy" : "eager"} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-32">
+            <p class="text-brand-dim text-lg font-medium">No photos added yet</p>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .masonry-gallery {
+    column-count: 3;
+    column-gap: 1rem;
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #f3f4f6;
+  }
+
+  .masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1023px) {
+    .masonry-gallery {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .masonry-gallery {
+      column-count: 1;
+    }
+  }
+</style>
