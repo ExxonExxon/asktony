@@ -1,11 +1,11 @@
 ---
 const services = [
-    { title: "Tile & Stone Installation", img: "obrien-real-estate-bentleigh/photo-1.webp" },
-    { title: "Bathroom Renovations", img: "vmch-st-catherines-aged-care-residence/photo-1.webp" },
-    { title: "Kitchen Splashbacks", img: "premium-residences/photo-1.webp" },
-    { title: "Waterproofing", img: "moorabbin-airport/photo-1.webp" },
-    { title: "Grouting & Sealing", img: "ds-aitken-reserve/photo-1.webp" },
-    { title: "Tile Repairs", img: "premium-residences/photo-2.webp" }
+    { title: "Tile & Stone Installation", desc: "Professional installation of ceramic, porcelain, marble and natural stone tiles for floors, walls and feature areas across residential and commercial spaces.", img: "tile-stone-installation.jpg" },
+    { title: "Bathroom Renovations", desc: "Complete bathroom tiling including wall and floor installation, waterproofing and finishing. Creating bathrooms that are both beautiful and built to last.", img: "bathroom-renovations.jpg" },
+    { title: "Kitchen Splashbacks", desc: "Clean, precisely installed kitchen splashbacks in ceramic, porcelain, marble or glass. A practical and stylish finish that protects your walls and transforms your kitchen.", img: "kitchen-splashbacks.jpg" },
+    { title: "Waterproofing", desc: "Internal and external waterproofing to Australian Standards for showers, bathrooms, balconies and patios. Essential protection against moisture damage.", img: "waterproofing.jpg" },
+    { title: "Grouting & Sealing", desc: "Professional grouting, re-grouting and sealing for tiles and natural stone. Proper sealing protects against moisture, stains and everyday wear.", img: "grouting-sealing.jpg" },
+    { title: "Tile Repairs", desc: "Expert tile and stone repairs including replacement, re-grouting and caulking. Where tiles are sound, we restore the finish without full replacement.", img: "tile-repairs.jpg" }
 ];
 ---
 <section id="services" class="section-padding bg-brand-base">
@@ -19,10 +19,11 @@ const services = [
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {services.map((service, index) => (
                 <div class="group reveal-up" style={`animation-delay: ${index * 100}ms`}>
-                    <div class="aspect-[4/5] overflow-hidden rounded-3xl glass-card !p-1.5">
-                        <img src={`/images/portfolio/${service.img}`} alt={service.title} class="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110" />
+                    <div class="aspect-[3/2] overflow-hidden rounded-3xl glass-card !p-1.5">
+                        <img src={`/images/services/${service.img}`} alt={service.title} class="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110" />
                     </div>
                     <h3 class="text-2xl font-bold text-brand-muted tracking-tight leading-none mt-6">{service.title}</h3>
+                    <p class="text-sm text-brand-dim leading-relaxed mt-3">{service.desc}</p>
                 </div>
             ))}
         </div>

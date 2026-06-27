@@ -4,94 +4,135 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Get a Quote | Anthony Calocani — Wall & Floor Tiling Melbourne" description="Send a video enquiry through Tradsiee for a free quote. No site visit needed.">
-	<Navbar />
-	<main class="pt-20">
-		<section class="section-padding bg-brand-surface">
-			<div class="max-w-7xl mx-auto px-6 lg:px-20">
-				<div class="grid lg:grid-cols-2 gap-20">
-					<!-- Quote Info -->
-					<div class="space-y-12 reveal-up">
-						<div class="space-y-6">
-							<h1 class="heading-lg">Get a Quote.</h1>
-							<p class="text-readable max-w-md">
-								Send a video enquiry through Tradsiee and get a free quote. We review the job before we step on site.
-							</p>
-						</div>
+<Layout
+  title="Get a Free Quote | Anthony Calocani — Wall & Floor Tiling Melbourne"
+  description="Request a free, obligation-free quote for your wall and floor tiling project in Melbourne. Send a video enquiry through Tradsiee — fast, accurate, no site visit needed."
+>
+  <Navbar />
+  <main class="pt-20">
+    <!-- Header -->
+    <section class="section-padding bg-brand-base">
+      <div class="max-w-7xl mx-auto px-6 lg:px-20">
+        <div class="max-w-3xl reveal-up">
+          <h1 class="heading-lg">Get a Quote.</h1>
+          <p class="text-readable mt-6 max-w-2xl">
+            Send a video enquiry through Tradsiee and receive a free, obligation-free quote. We assess your project remotely before setting foot on site — saving you time and providing accurate pricing.
+          </p>
+        </div>
+      </div>
+    </section>
 
-						<div class="space-y-6">
-							<h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">How it works</h3>
-							<div class="space-y-8">
-								<div class="flex items-start space-x-5">
-									<span class="text-2xl font-bold text-brand-dim w-8 flex-shrink-0">01</span>
-									<div class="space-y-2">
-										<p class="text-xl font-bold text-brand-muted uppercase tracking-tight">Record your space</p>
-										<p class="text-base text-brand-dim leading-relaxed">Use your phone to show the area. Walls, floors, the whole space. We'll see exactly what needs doing.</p>
-									</div>
-								</div>
-								<div class="flex items-start space-x-5">
-									<span class="text-2xl font-bold text-brand-dim w-8 flex-shrink-0">02</span>
-									<div class="space-y-2">
-										<p class="text-xl font-bold text-brand-muted uppercase tracking-tight">We assess &amp; quote</p>
-										<p class="text-base text-brand-dim leading-relaxed">We review the video, calculate the materials and send a detailed quote. Faster than a site visit.</p>
-									</div>
-								</div>
-								<div class="flex items-start space-x-5">
-									<span class="text-2xl font-bold text-brand-dim w-8 flex-shrink-0">03</span>
-									<div class="space-y-2">
-										<p class="text-xl font-bold text-brand-muted uppercase tracking-tight">Book installation</p>
-										<p class="text-base text-brand-dim leading-relaxed">Approve the quote and we come ready. One team, one visit, done right.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+    <!-- Main Content: Widget + Steps -->
+    <section class="section-padding bg-brand-surface">
+      <div class="max-w-7xl mx-auto px-6 lg:px-20">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <!-- Tradsiee Widget -->
+          <div class="lg:col-span-7 reveal-up">
+            <div class="glass-card !p-8 lg:!p-12">
+              <div class="space-y-4 mb-8 text-center lg:text-left">
+                <span class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">Send your video enquiry</span>
+                <p class="text-brand-dim leading-relaxed">Record directly in your browser. No account or download needed.</p>
+              </div>
+              <div id="tradsiee-widget-root"></div><script src="https://tradsiee.com/loader.js?slug=admin-5003" async></script>
+            </div>
+          </div>
 
-						<div class="space-y-6 pt-4">
-							<h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">Still have questions?</h3>
-							<div class="flex items-start space-x-6">
-								<div class="w-12 h-12 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center flex-shrink-0 backdrop-blur-xl">
-									<i class="fas fa-envelope text-brand-accent"></i>
-								</div>
-								<div>
-									<p class="text-xs font-bold uppercase tracking-wider text-brand-dim mb-1">Email Us</p>
-									<a href="mailto:tony@asktony.com.au" class="text-xl font-bold text-brand-muted hover:text-brand-accent transition-colors">tony@asktony.com.au</a>
-								</div>
-							</div>
+          <!-- Steps -->
+          <div class="lg:col-span-5 reveal-up" style="animation-delay: 0.15s;">
+            <span class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">How it works</span>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-brand-muted mt-4 mb-10">
+              Three simple steps.
+            </h2>
 
-							<div class="flex items-start space-x-6">
-								<div class="w-12 h-12 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center flex-shrink-0 backdrop-blur-xl">
-									<i class="fas fa-phone text-brand-accent"></i>
-								</div>
-								<div>
-									<p class="text-xs font-bold uppercase tracking-wider text-brand-dim mb-1">Call Us</p>
-									<a href="tel:+61451644016" class="text-xl font-bold text-brand-muted hover:text-brand-accent transition-colors">+61 451 644 016</a>
-								</div>
-							</div>
+            <div class="space-y-10">
+              <div class="flex gap-5">
+                <div class="flex flex-col items-center">
+                  <div class="w-12 h-12 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-video text-brand-accent text-sm"></i>
+                  </div>
+                  <div class="w-px flex-1 bg-white/[0.08] mt-3"></div>
+                </div>
+                <div class="pb-2">
+                  <p class="text-lg font-bold text-brand-muted">Record your space</p>
+                  <p class="text-base text-brand-dim leading-relaxed mt-2">
+                    Record the area on your phone, showing walls, floors and the full space. We will review the footage to understand exactly what your project requires.
+                  </p>
+                </div>
+              </div>
 
-							<div class="flex items-start space-x-6">
-								<div class="w-12 h-12 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center flex-shrink-0 backdrop-blur-xl">
-									<i class="fas fa-map-marker-alt text-brand-accent"></i>
-								</div>
-								<div>
-									<p class="text-xs font-bold uppercase tracking-wider text-brand-dim mb-1">Location</p>
-									<p class="text-xl font-bold text-brand-muted">Melbourne, VIC</p>
-								</div>
-							</div>
-						</div>
-					</div>
+              <div class="flex gap-5">
+                <div class="flex flex-col items-center">
+                  <div class="w-12 h-12 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-file-invoice text-brand-accent text-sm"></i>
+                  </div>
+                  <div class="w-px flex-1 bg-white/[0.08] mt-3"></div>
+                </div>
+                <div class="pb-2">
+                  <p class="text-lg font-bold text-brand-muted">We assess &amp; quote</p>
+                  <p class="text-base text-brand-dim leading-relaxed mt-2">
+                    We review the video, calculate materials and labour, and send a comprehensive quote. Faster and more convenient than a traditional site visit.
+                  </p>
+                </div>
+              </div>
 
-					<!-- Tradsiee Widget -->
-					<div class="reveal-up text-center" style="animation-delay: 0.2s;">
-						<div class="space-y-4 mb-8">
-							<h3 class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">Send your video enquiry</h3>
-							<p class="text-base text-brand-dim leading-relaxed">Record directly in your browser. No account needed.</p>
-						</div>
-						<div id="tradsiee-widget-root" class="glass-card !p-6 inline-block"></div>
-						<script src="https://tradsiee.com/loader.js?slug=admin-5003" async></script>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
-	<Footer />
+              <div class="flex gap-5">
+                <div class="flex flex-col items-center">
+                  <div class="w-12 h-12 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-check-circle text-brand-accent text-sm"></i>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-lg font-bold text-brand-muted">Book installation</p>
+                  <p class="text-base text-brand-dim leading-relaxed mt-2">
+                    Approve the quote and we arrive prepared. One team, one visit, completed to the highest standard.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section-padding bg-brand-base">
+      <div class="max-w-7xl mx-auto px-6 lg:px-20">
+        <div class="text-center mb-16 reveal-up">
+          <span class="text-xs font-bold text-brand-accent uppercase tracking-[0.15em]">Still have questions?</span>
+          <h2 class="heading-lg mt-4">Get in touch.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto reveal-up">
+          <div class="glass-card !p-8 text-center">
+            <div class="w-14 h-14 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center mx-auto mb-5">
+              <i class="fas fa-envelope text-brand-accent text-lg"></i>
+            </div>
+            <p class="text-xs font-bold uppercase tracking-wider text-brand-dim mb-2">Email Us</p>
+            <a href="mailto:tony@asktony.com.au" class="text-lg font-bold text-brand-muted hover:text-brand-accent transition-colors">
+              tony@asktony.com.au
+            </a>
+          </div>
+
+          <div class="glass-card !p-8 text-center">
+            <div class="w-14 h-14 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center mx-auto mb-5">
+              <i class="fas fa-phone text-brand-accent text-lg"></i>
+            </div>
+            <p class="text-xs font-bold uppercase tracking-wider text-brand-dim mb-2">Call Us</p>
+            <a href="tel:+61451644016" class="text-lg font-bold text-brand-muted hover:text-brand-accent transition-colors">
+              +61 451 644 016
+            </a>
+          </div>
+
+          <div class="glass-card !p-8 text-center">
+            <div class="w-14 h-14 rounded-full bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center mx-auto mb-5">
+              <i class="fas fa-map-marker-alt text-brand-accent text-lg"></i>
+            </div>
+            <p class="text-xs font-bold uppercase tracking-wider text-brand-dim mb-2">Location</p>
+            <p class="text-lg font-bold text-brand-muted">Melbourne, VIC</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
 </Layout>
