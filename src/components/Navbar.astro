@@ -7,9 +7,9 @@ const sections = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/80 backdrop-blur-xl border-b border-white/[0.06]">
 	<div class="max-w-7xl mx-auto px-6 lg:px-20 flex items-center justify-between h-20">
-		<a href="/" class="text-lg md:text-xl font-bold tracking-tighter uppercase text-gray-900">
+		<a href="/" class="text-lg md:text-xl font-bold tracking-tighter uppercase text-brand-muted">
 			Anthony
 		</a>
 
@@ -17,7 +17,7 @@ const sections = [
 			{sections.map((s) => (
 				<a
 					href={s.href}
-					class="text-xs font-bold text-gray-600 hover:text-brand-accent transition-colors uppercase tracking-[0.1em]"
+					class="text-xs font-bold text-brand-dim hover:text-brand-accent transition-colors uppercase tracking-[0.1em]"
 				>
 					{s.label}
 				</a>
@@ -27,7 +27,7 @@ const sections = [
 
 		<button
 			id="mobile-menu-button"
-			class="md:hidden w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-600 focus:outline-none"
+			class="md:hidden w-10 h-10 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-brand-muted focus:outline-none"
 			aria-label="Toggle Menu"
 		>
 			<div class="w-4 h-3 relative flex flex-col justify-between">
@@ -39,13 +39,13 @@ const sections = [
 	</div>
 
 	<!-- Mobile Backdrop -->
-	<div id="mobile-backdrop" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300" style="display: none"></div>
+	<div id="mobile-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300" style="display: none"></div>
 
 	<!-- Mobile Drawer -->
-	<div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[80vw] max-w-sm bg-white border-l border-gray-200 shadow-heavy translate-x-full transition-transform duration-300 ease-out" style="z-index: 45; display: none">
-		<div class="flex items-center justify-between px-6 h-20 border-b border-gray-100">
-			<span class="text-xs font-bold tracking-[0.15em] text-gray-500 uppercase">Navigation</span>
-			<button id="mobile-close" class="w-8 h-8 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+	<div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[80vw] max-w-sm bg-brand-surface border-l border-white/[0.06] shadow-heavy translate-x-full transition-transform duration-300 ease-out" style="z-index: 45; display: none">
+		<div class="flex items-center justify-between px-6 h-20 border-b border-white/[0.06]">
+			<span class="text-xs font-bold tracking-[0.15em] text-brand-dim uppercase">Navigation</span>
+			<button id="mobile-close" class="w-8 h-8 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-brand-dim hover:text-brand-muted transition-colors">
 				<i class="fas fa-times text-xs"></i>
 			</button>
 		</div>
@@ -53,7 +53,7 @@ const sections = [
 			{[...sections, { label: 'Get a Quote', href: '/quote' }].map((item) => (
 				<a
 					href={item.href}
-					class="mobile-nav-link block py-4 text-base font-medium text-gray-700 hover:text-brand-accent transition-colors border-b border-gray-100 opacity-0 translate-x-4"
+					class="mobile-nav-link block py-4 text-base font-medium text-brand-dim hover:text-brand-accent transition-colors border-b border-white/[0.06] opacity-0 translate-x-4"
 				>
 					{item.label}
 				</a>

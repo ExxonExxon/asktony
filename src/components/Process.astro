@@ -5,23 +5,23 @@ const steps = [
     { title: "Installation", desc: "Once approved, we arrive ready. Prep, waterproofing, tiling, finishing — one team, one visit, no surprises." }
 ];
 ---
-<section id="how-it-works" class="section-padding bg-gray-100">
+<section id="how-it-works" class="section-padding bg-brand-base">
     <div class="max-w-7xl mx-auto px-6 lg:px-20">
         <div class="max-w-3xl mb-24 space-y-8 reveal-up">
             <h2 class="heading-lg">Process.</h2>
-            <p class="text-readable">Powered by <a href="https://tradsiee.com" target="_blank" rel="noopener" class="font-tradsiee font-bold text-brand-accent hover:text-brand-accent-bright underline underline-offset-2 transition-colors">Tradsiee</a> — send a video, get a fast quote.</p>
+            <p class="text-readable">Powered by <a href="https://tradsiee.com" target="_blank" rel="noopener" class="font-bold text-brand-accent hover:text-brand-accent-bright underline underline-offset-2 transition-colors">Tradsiee</a> — send a video, get a fast quote.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-12">
             {steps.map((step, index) => (
-                <div class="space-y-8 reveal-up" style={`animation-delay: ${index * 200}ms`}>
+                <div class="glass-card !p-8 space-y-8 reveal-up" style={`animation-delay: ${index * 200}ms`}>
                     <div class="flex items-center space-x-4">
-                        <span class="text-3xl font-bold text-gray-300">{String(index + 1).padStart(2, '0')}</span>
-                        <div class="h-px flex-1 bg-gray-300"></div>
+                        <span class="text-3xl font-bold text-brand-dim">{String(index + 1).padStart(2, '0')}</span>
+                        <div class="h-px flex-1 bg-white/[0.08]"></div>
                     </div>
                     <div class="space-y-4">
-                        <h3 class="text-xl font-bold text-gray-900 uppercase tracking-tight">{step.title}</h3>
-                        <p class="text-base text-gray-700 leading-relaxed">{step.desc}</p>
+                        <h3 class="text-xl font-bold text-brand-muted uppercase tracking-tight">{step.title}</h3>
+                        <p class="text-base text-brand-dim leading-relaxed">{step.desc}</p>
                     </div>
                 </div>
             ))}

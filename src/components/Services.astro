@@ -1,14 +1,14 @@
 ---
 const services = [
-    { title: "Tile & Stone Installation", img: "project-1.jpg" },
-    { title: "Bathroom Renovations", img: "project-2.jpg" },
-    { title: "Kitchen Splashbacks", img: "project-3.jpg" },
-    { title: "Waterproofing", img: "project-4.jpg" },
-    { title: "Grouting & Sealing", img: "project-5.jpg" },
-    { title: "Tile Repairs", img: "project-6.jpg" }
+    { title: "Tile & Stone Installation", img: "obrien-real-estate-bentleigh/photo-1.webp" },
+    { title: "Bathroom Renovations", img: "vmch-st-catherines-aged-care-residence/photo-1.webp" },
+    { title: "Kitchen Splashbacks", img: "premium-residences/photo-1.webp" },
+    { title: "Waterproofing", img: "moorabbin-airport/photo-1.webp" },
+    { title: "Grouting & Sealing", img: "ds-aitken-reserve/photo-1.webp" },
+    { title: "Tile Repairs", img: "premium-residences/photo-2.webp" }
 ];
 ---
-<section id="services" class="section-padding bg-white">
+<section id="services" class="section-padding bg-brand-base">
     <div class="max-w-7xl mx-auto px-6 lg:px-20">
             <div class="mb-24 reveal-up">
                 <div class="space-y-6">
@@ -19,10 +19,10 @@ const services = [
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {services.map((service, index) => (
                 <div class="group reveal-up" style={`animation-delay: ${index * 100}ms`}>
-                    <div class="aspect-[4/5] overflow-hidden rounded-3xl shadow-soft border border-gray-100">
-                        <img src={`/images/portfolio/${service.img}`} alt={service.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="aspect-[4/5] overflow-hidden rounded-3xl glass-card !p-1.5">
+                        <img src={`/images/portfolio/${service.img}`} alt={service.title} class="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110" />
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 tracking-tight leading-none mt-6">{service.title}</h3>
+                    <h3 class="text-2xl font-bold text-brand-muted tracking-tight leading-none mt-6">{service.title}</h3>
                 </div>
             ))}
         </div>
