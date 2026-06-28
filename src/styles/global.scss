@@ -61,7 +61,7 @@
   }
 
   .btn-primary {
-    @apply px-10 py-5 text-white text-xs font-bold rounded-full transition-standard uppercase tracking-[0.15em] inline-block text-center relative overflow-hidden bg-brand-accent;
+    @apply px-8 py-4 md:px-10 md:py-5 text-white text-xs font-bold rounded-full transition-standard uppercase tracking-[0.15em] inline-block text-center relative overflow-hidden bg-brand-accent;
     &::after {
       content: '';
       @apply absolute inset-0 translate-y-full transition-transform duration-300;
@@ -87,7 +87,7 @@
   }
 
   .btn-secondary {
-    @apply px-10 py-5 text-xs font-bold rounded-full transition-standard uppercase tracking-[0.15em] inline-block text-center;
+    @apply px-8 py-4 md:px-10 md:py-5 text-xs font-bold rounded-full transition-standard uppercase tracking-[0.15em] inline-block text-center;
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: rgba(255, 255, 255, 0.9);
     &:hover {
@@ -141,9 +141,7 @@
   animation: pulse-soft 3s ease-in-out infinite;
 }
 
-.pulse-icon:nth-child(2) { animation-delay: 0.5s; }
-.pulse-icon:nth-child(3) { animation-delay: 1s; }
-.pulse-icon:nth-child(4) { animation-delay: 1.5s; }
+
 
 ::selection {
   @apply bg-brand-accent text-white;

@@ -37,31 +37,31 @@ const sections = [
 			</div>
 		</button>
 	</div>
-
-	<!-- Mobile Backdrop -->
-	<div id="mobile-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300" style="display: none"></div>
-
-	<!-- Mobile Drawer -->
-	<div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[80vw] max-w-sm bg-brand-surface border-l border-white/[0.06] shadow-heavy translate-x-full transition-transform duration-300 ease-out" style="z-index: 45; display: none">
-		<div class="flex items-center justify-between px-6 h-20 border-b border-white/[0.06]">
-			<span class="text-xs font-bold tracking-[0.15em] text-brand-dim uppercase">Navigation</span>
-			<button id="mobile-close" class="w-8 h-8 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-brand-dim hover:text-brand-muted transition-colors">
-				<i class="fas fa-times text-xs"></i>
-			</button>
-		</div>
-		<nav class="flex flex-col px-6 pt-6 space-y-1">
-			{[...sections, { label: 'Get a Quote', href: '/quote' }].map((item) => (
-				<a
-					href={item.href}
-					class="mobile-nav-link block py-4 text-base font-medium text-brand-dim hover:text-brand-accent transition-colors border-b border-white/[0.06] opacity-0 translate-x-4"
-				>
-					{item.label}
-				</a>
-			))}
-			<a href="/quote" class="btn-primary text-center mt-6 !py-4">Get a Quote</a>
-		</nav>
-	</div>
 </nav>
+
+<!-- Mobile Backdrop -->
+<div id="mobile-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300" style="display: none"></div>
+
+<!-- Mobile Drawer -->
+<div id="mobile-drawer" class="fixed top-0 right-0 h-full w-[80vw] max-w-sm border-l border-white/[0.06] shadow-heavy translate-x-full transition-transform duration-300 ease-out" style="z-index: 45; display: none; background: #15151d">
+	<div class="flex items-center justify-between px-6 h-20 border-b border-white/[0.06]">
+		<span class="text-xs font-bold tracking-[0.15em] text-brand-dim uppercase">Navigation</span>
+		<button id="mobile-close" class="w-10 h-10 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-brand-dim hover:text-brand-muted transition-colors">
+			<i class="fas fa-times text-sm"></i>
+		</button>
+	</div>
+	<nav class="flex flex-col px-6 pt-6 space-y-1">
+		{[...sections, { label: 'Get a Quote', href: '/quote' }].map((item) => (
+			<a
+				href={item.href}
+				class="mobile-nav-link block py-4 text-base font-medium text-brand-dim hover:text-brand-accent transition-colors border-b border-white/[0.06]"
+			>
+				{item.label}
+			</a>
+		))}
+		<a href="/quote" class="btn-primary text-center mt-6 !py-4">Get a Quote</a>
+	</nav>
+</div>
 
 <script>
 	const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -88,12 +88,6 @@ const sections = [
 		hamburgerTop?.classList.add('rotate-[42deg]', 'translate-x-[2px]');
 		hamburgerMiddle?.classList.add('opacity-0', '-translate-x-2');
 		hamburgerBottom?.classList.add('-rotate-[42deg]', 'translate-x-[2px]');
-
-		document.querySelectorAll('.mobile-nav-link').forEach((link, i) => {
-			setTimeout(() => {
-				link.classList.remove('opacity-0', 'translate-x-4');
-			}, 80 + i * 60);
-		});
 	}
 
 	function closeMenu() {
@@ -101,18 +95,10 @@ const sections = [
 		isMenuOpen = false;
 		document.body.style.overflow = '';
 
-		const navLinks = document.querySelectorAll('.mobile-nav-link');
+		void mobileDrawer?.offsetHeight;
 
-		navLinks.forEach((link, i) => {
-			setTimeout(() => {
-				link.classList.add('opacity-0', 'translate-x-4');
-			}, (navLinks.length - 1 - i) * 60);
-		});
-
-		setTimeout(() => {
-			mobileBackdrop?.classList.add('opacity-0', 'pointer-events-none');
-			mobileDrawer?.classList.add('translate-x-full');
-		}, (navLinks.length - 1) * 60);
+		mobileBackdrop?.classList.add('opacity-0', 'pointer-events-none');
+		mobileDrawer?.classList.add('translate-x-full');
 
 		hamburgerTop?.classList.remove('rotate-[42deg]', 'translate-x-[2px]');
 		hamburgerMiddle?.classList.remove('opacity-0', '-translate-x-2');
