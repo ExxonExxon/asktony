@@ -21,7 +21,7 @@ const rawProjects: Omit<Project, 'slug'>[] = [
   {
     name: "O'BRIEN REAL ESTATE BENTLEIGH",
     category: "Education",
-    description: "A complete commercial tile installation for a modern education and retail space in Bentleigh. Large format porcelain floors throughout the ground floor with careful attention to detail in the entry and common areas.",
+    description: "We retiled the walls and floors of the O'Brien Real Estate office in Bentleigh. Large format porcelain tiles throughout the ground floor with clean finishes in the entry, common areas and kitchenette.",
     images: Array.from({ length: 4 }, (_, i) => `/images/portfolio/obrien-real-estate-bentleigh/photo-${i + 1}.webp`),
   },
   {
