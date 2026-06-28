@@ -6,10 +6,10 @@ interface Props {
 	description?: string;
 }
 
-const { 
-	title = "Anthony Calocani | Expert Wall & Floor Tiling — Melbourne",
-	description = "Melbourne's trusted wall and floor tiling contractor. Specialising in ceramic, porcelain, marble and natural stone installation for bathrooms, kitchens, patios and commercial spaces. Waterproofing, grouting and tile repairs across Melbourne."
-} = Astro.props;
+	const { 
+		title = "Anthony Calocani | Wall & Floor Tiler Melbourne — Expert Tiling Services",
+		description = "Melbourne's trusted wall and floor tiler. Specialising in ceramic, porcelain, marble and natural stone installation for bathrooms, kitchens, patios and commercial spaces. Waterproofing, grouting, tile repairs and sealing across Melbourne."
+	} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -21,6 +21,7 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={Astro.url} />
 
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
@@ -30,6 +31,8 @@ const {
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL('/images/logo.png', Astro.url)} />
+		<meta property="og:locale" content="en_AU" />
+		<meta property="og:site_name" content="Anthony Calocani Tiling" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
@@ -37,6 +40,41 @@ const {
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL('/images/logo.png', Astro.url)} />
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Anthony Calocani",
+			"image": "https://asktony.com.au/images/portfolio/anthony.webp",
+			"url": "https://asktony.com.au",
+			"telephone": "+61451644016",
+			"email": "tony@asktony.com.au",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Melbourne",
+				"addressRegion": "VIC",
+				"addressCountry": "AU"
+			},
+			"priceRange": "$$",
+			"description": "Melbourne wall and floor tiler specialising in ceramic, porcelain, marble and natural stone installation.",
+			"areaServed": {
+				"@type": "City",
+				"name": "Melbourne"
+			},
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Tiling Services",
+				"itemListElement": [
+					{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tile & Stone Installation" } },
+					{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Renovations" } },
+					{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Splashbacks" } },
+					{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Waterproofing" } },
+					{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Grouting & Sealing" } },
+					{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tile Repairs" } }
+				]
+			}
+		}
+	</script>
 	</head>
 	<body class="selection:bg-brand-accent selection:text-white overflow-x-hidden">
 		<slot />

@@ -9,10 +9,10 @@ const residential = projects.find((p) => p.slug === 'premium-residences');
   <div class="max-w-7xl mx-auto px-6 lg:px-20">
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-12 mb-16 md:mb-24">
       <div class="reveal-up">
-        <h2 class="heading-lg">Projects.</h2>
+        <h2 class="heading-lg">Featured Projects.</h2>
       </div>
       <p class="text-readable max-w-md reveal-up" style="animation-delay: 150ms">
-        Explore a selection of our recent tiling projects across Melbourne — from educational
+        Explore a selection of our recent wall and floor tiling projects across Melbourne — from educational
         facilities and aged care residences through to commercial spaces and private homes.
         Every project is completed with precision and care to the highest standard.
       </p>
@@ -30,7 +30,7 @@ const residential = projects.find((p) => p.slug === 'premium-residences');
               {item.images.length > 0 ? (
                 <img
                   src={item.images[0]}
-                  alt={item.name}
+                  alt={`${item.name} — tiling project by Anthony Calocani Melbourne`}
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               ) : (
@@ -56,7 +56,7 @@ const residential = projects.find((p) => p.slug === 'premium-residences');
             {residential.images.length > 0 ? (
               <img
                 src={residential.images[0]}
-                alt={residential.name}
+                alt={`${residential.name} — tiling project by Anthony Calocani Melbourne`}
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             ) : (
